@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- MathJax for mathematical notation -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']],
+            processEscapes: true
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+    <!-- Pyodide and CodeMirror -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/pastel-on-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/android-chrome-512x512.png">
+    
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href=../assets/colours.css>
+    <link rel="stylesheet" href="../assets/shared-styles.css">
+    <link rel="stylesheet" href="../assets/nav-bar.css">
+    <link rel="stylesheet" href="../assets/module_card.css">
+    <link rel="stylesheet" href="../assets/learning_outcomes.css">
+    <link rel="stylesheet" href="../assets/learning_lists.css">
+    <link rel="stylesheet" href="../assets/box_styles.css">
+    <link rel="stylesheet" href="../assets/code_styles.css">
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L2D - HB - Assignment submission</title>
+    
+    <!-- File URLs for this lesson -->
+    <script>window.LESSON_FILES = []; window.LESSON_PACKAGES = [];</script>
+        
+</head>
+<body>
+    
+    <!-- Sidebar Navigation -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <a href="../homepage.html" style="text-decoration: none; display: inline-block;">
+                <img src="../assets/scryptIQ_logo_dark.png" alt="scryptIQ Logo" class="sidebar-logo">
+            </a>
+        </div>
+
+        <h3>Content</h3>
+        <ul>
+            <li><a href="./introduction.html" class="">Introduction</a></li><li><a href="./lesson-releases.html">Lesson Releases</a></li><li><a href="./L2D-portal.html">scryptIQ Portal & Github</a></li><li><a href="./online-materials.html">Online Materials</a></li><li><a href="./codespaces.html">Codespaces</a></li><li><a href="./course-feedback.html">Submitting course feedback</a></li><li><a href="./live-lectures.html">Live Lectures & Drop-in Sessions</a></li>
+            <li>
+                <div class="nav-toggle active" data-target="expandable-section-7">
+                    Assignment submission
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <ul class="nested-nav expanded" id="expandable-section-7"><li><a href="#introduction">Introduction</a></li><li><a href="#workflow">Workflow</a></li><li><a href="#assignment-workflow">Assignment Workflow</a></li><li><a href="#submission-workflow">Submission Workflow</a></li><li><a href="#troubleshooting-codespace-based-submissions">Troubleshooting Codespace-based submissions</a></li><li><a href="#deleting-unused-codespaces">Deleting unused Codespaces</a></li><li><a href="#local-assignment-submission">Local assignment submission</a></li>
+                </ul>
+            </li><li><a href="./assignment-feedback.html">Assignment Feedback</a></li><li><a href="./ai-as-a-tool.html">AI as a Tool</a></li><li><a href="./final-project.html">Final Project</a></li><li><a href="./tutor-support.html">Tutor Support Sessions</a></li><li><a href="./contact-us.html">Contact us</a></li>
+        </ul>
+
+        <h3 class="collapsible-header collapsed">
+            Resources
+            <span class="collapse-icon">►</span>
+        </h3>
+        <div class="collapsible-content collapsed">
+            <ul>
+                <li><a href="./glossary.html">Glossary</a></li><li><a href="./downloads.html">Downloads</a></li>
+            </ul>
+        </div>
+
+        <h3>
+            <li><a href="./report-issue.html">Report an Issue</a></li>
+        </h3>
+    </div>
+    
+    <!-- Sidebar Toggle Button -->
+    <button id="sidebar-toggle" class="sidebar-toggle">❮</button>
+    
+    <!-- Main Content Area -->
+    <div id="main-content" class="main-content">
+        <!-- Top Navigation Bar -->
+        <div class="top-navbar">
+            <h1 class="page-title">Student Handbook</h1>
+            <div class="nav-actions">
+                <a href="../homepage.html" class="text-button" title="Materials homepage">
+                    Homepage
+                </a>
+                <a href="https://scryptiq.ai/my-cohorts/" class="text-button scryptiq-button" title="Find out more about us">
+                    scryptIQ
+                </a>
+            </div>
+        </div>
+
+        
+            <div class="module-card" id="introduction">
+                <div class="module-header">
+                    Assignment submission <span class="module-tag">HB</span>
+                </div>
+                <div class="module-body">
+                    <p>As you progress through the course, you will complete one assignment per fortnightly lesson. Assignments are given as Jupyter Notebook templates, found inside your <strong>Assignments</strong> folder, and must be submitted before the next lesson release (typically before 00:00, 14 days after release).<br><br><em>Timely submissions are graded within 14 days</em>, and late submissions may delay receiving feedback and certification. For submission extensions due to extenuating circumstances, please contact <em>hello@scryptiq.ai</em>, and we will make arrangements for you to submit your work at a convenient time.<br><br>A guided video workflow of how to submit your assignment (from timestamp <strong>3:12</strong>), is given in the tutorial video, below:</p>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/dh5RxxdyOCo"
+                width="560"
+                height="315"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+                </div>
+            </div>
+            
+            <div class="module-card" id="workflow">
+                <div class="module-body">
+                    <div class="module-section">
+                        <h3>Workflow</h3>
+                        <p>Below is a step-by-step instruction on how to submit an assignment through GitHub Codespaces. Codespaces allow you to create a remote, online instance of Microsoft Visual Studio Code. This means that any issues with hardware, software, package dependencies should be taken care of.</p><p>While they are mostly great, some students do sometimes run into issues with Codespaces, when submitting assignments. If you are having any difficulties, please contact us at <em>hello@scryptiq.ai</em>.</p>
+        <div class="info-box tip-box">
+            <div class="box-title">
+                <span class="box-icon"></span>
+                TIP
+            </div>
+            <div class="box-content">
+                <p>We recommend Google Chrome as the best browser for stability and ease, however it should work with the other mainstream browsers.</p>
+            </div>
+        </div>
+        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="module-card" id="assignment-workflow">
+                <div class="module-body">
+                    <div class="module-section">
+                        <h3>Assignment Workflow</h3>
+                        <h4>1. Understanding your assignment folder:</h4><p><ul class="nested-list"><li>Navigate to your lesson repository and open the Assignments folder</li><br><li>Items within: <strong>‘XX_Assignment.ipynb’</strong> - a Jupyter notebook containing the assignment questions and spaces to answer them. Please fill in this file.</li><br><li>Feedback folder - where your feedback will be uploaded within 14 days</li><br><li>More information on feedback is provided within this folder</li><br><li>Any data needed for assignment will be in the Data folder located in the</li></ul>home page/directory</p><h4>2. Creating a Codespace:</h4><p><ol class="nested-list"><li>Click the green Code button and select the Codespaces tab from your home screen.</li><br><li>Click the ‘Create codespace on main’ button.</li><br><li>add new information.</li></ol></p>
+        <div class="info-box note-box">
+            <div class="box-title">
+                <span class="box-icon"></span>
+                NOTE
+            </div>
+            <div class="box-content">
+                <p>Codespace setup may take several minutes and can be affected by your internet connection. Click Building codespace in the bottom right to see the your progress. It will indicate, in this log, when the Codespace creation is complete.</p>
+            </div>
+        </div>
+        <h4>3. Open &amp; set up your assignment:</h4><p><ol class="nested-list"><li>Find your assignment notebook using the file Explorer tab (on the left - an icon of two overlaid pages).</li><br><li>In the top right, if you don’t already see scryptiq_VE displayed, please click Select Kernel (top right) → Select Python Environments.</li><br><li>Choose scryptiq_VE (our pre-configured environment)</li></ol></p>
+        <div class="info-box important-box">
+            <div class="box-title">
+                <span class="box-icon"></span>
+                IMPORTANT
+            </div>
+            <div class="box-content">
+                <p>If properly selected, the name scryptiq_VE will be displayed in the top right where you selected the kernel originally alongside the Python version. Your Notebooks will then run code, as expected.</p>
+            </div>
+        </div>
+        <h4>4. Complete your assignment:</h4><p><ul class="nested-list"><li>Cells are the basis of Jupyter notebooks, in brief they are a distinct container</li></ul>in a Jupyter Notebook where you write and execute individual pieces of<br>Python code.<ul class="nested-list"><li>Cells allow you to break your work into logical segments that can be run</li></ul>independently.<ul class="nested-list"><li>Add code cells using the + Code button</li><br><li>Run cells with the <strong>play button</strong> (a little triangle) or <strong>Ctrl + Enter</strong></li></ul></p>
+        <div class="info-box warning-box">
+            <div class="box-title">
+                <span class="box-icon"></span>
+                WARNING
+            </div>
+            <div class="box-content">
+                <p>Your work autosaves while your internet connection remains active. But we do recommend that, before closing a Codespace tab or window, you save your work manually (in the ‘File’ menu) - just in case.</p>
+            </div>
+        </div>
+        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="module-card" id="submission-workflow">
+                <div class="module-body">
+                    <div class="module-section">
+                        <h3>Submission Workflow</h3>
+                        <h4>1. Submit your completed assignment:</h4><p>Only complete these next steps when you are ready to submit your assignment. If you are pausing your work simply exit the browser as normal and begin again with step 2 where under the <strong>Codespaces tab</strong> there will be your old workspace. Your work should be saved within.</p><p><ol class="nested-list"><li>Click the Source Control tab (fork symbol) on the far left. This opens a VSCode interface for Git control</li><br><li>Click the + symbol next to your file to stage changes</li><br><li>Enter a commit message (e.g., &quot;Assignment completed”)</li><br><li>Click the green Commit button, then press the Sync Changes button.</li></ol></p>
+        <div class="info-box note-box">
+            <div class="box-title">
+                <span class="box-icon"></span>
+                NOTE
+            </div>
+            <div class="box-content">
+                <p>This is the typical workflow of git: Save changes → Stage changes → Commit (with message) → Sync (push) to the main repo (typically in the cloud).</p>
+            </div>
+        </div>
+        <h4>2. Delete your Codespace after use (mandatory):</h4><p>After submitting your assignment, you <strong>must delete your codespace</strong>. This step is essential, as active codespaces consume computational resources on GitHub&#x27;s servers. Leaving too many codespaces running may result in GitHub restricting your access to this feature. Each codespace operates as a dedicated virtual computer instance that requires resources to maintain.</p><p><ol class="nested-list"><li>Return to your repository, click <strong>Code → Codespaces</strong> tab</li><br><li>Find your Codespace</li><br><li>Click the three dots (...) beside it</li><br><li>Select Delete from the dropdown menu</li></ol></p><p>While this workflow might initially seem complex, it familiarises you with GitHub&#x27;s infrastructure, and enables you to easily share and collaborate on code, should you continue coding in the future.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="module-card" id="troubleshooting-codespace-based-submissions">
+                <div class="module-body">
+                    <div class="module-section">
+                        <h3>Troubleshooting Codespace-based submissions</h3>
+                        <p>Occasionally, you may run into error dialogues when trying to synchronise your work out of your Codespace, back to your GitHub repository, during submission. This often occurs when a change has been made to a repository <em>after</em> the Codespace was first built, causing conflicts between the environment in the Codespace, and its counterpart in the main repository. Here are two easy solutions that should fix this for you. Workaround A is user-interface based, and is more intuitive to follow; whereas workaround B is a cleaner fix, that involves using the Codespace&#x27;s terminal.</p><h4>Workaround A (UI-based fix)</h4><p>This solution offers a simple (but slightly less elegant) workflow to ensure your assignment is submitted.<br><ol class="nested-list"><li>Your work should autosave in Codespaces, but to be doubly sure, manually save using <strong>cmd + s</strong> on a Mac, or <strong>ctrl + s</strong> on a Windows PC.</li><br><li>Download your work. In the &#x27;Explore&#x27; tab on the far left, you will see a list of files, including the <strong>XYZ_Assignment.ipynb</strong> file that you wish to submit. Right-click this, and click &#x27;Download&#x27;.</li></ol></p><p><img src="./images/codespace_ts_1.png" alt="" class="notebook-image"></p><p><ol class="nested-list"><li>Go back to your main GitHub repository, and click on the &#x27;<strong>Assignments</strong>&#x27; folder. Click <strong>Add File</strong> in the top right, and then <strong>Upload Files</strong>.</li></ol></p><p><img src="./images/codespace_ts_2.png" alt="" class="notebook-image"></p><p><ol class="nested-list"><li>Drag your locally downloaded assignment file from your Explorer/Finder window into your internet browser window, and add a commit message into the first &#x27;Commit Changes&#x27; field, as normal: i.e. &#x27;Assignment submitted&#x27;.</li><br><li>Click the green <strong>Commit changes</strong> button, and you will have submitted your assignment.</li></ol></p><h4>Workaround B (terminal-based fix)</h4><p>This solution outlines how to fix this within the Codespace. If you would like to brave the command line (we recommend you download a copy of your work locally as a backup, first [as per steps 1 &amp; 2, above]), please follow these instructions:<br><ol class="nested-list"><li>Open the <strong>terminal</strong> pane in your Codespace (usually <strong>cmd + J</strong> on a Mac, or <strong>ctrl + J</strong> on a Windows machine). This should toggle the Terminal pane at the bottom of the window.</li><br><li>Type in the following two commands:</li></ol><strong>git pull origin main</strong><br>&lt;press Enter&gt;<br><em>Note: If this doesn&#x27;t work, try:</em> <strong>git pull origin master</strong><br><br><strong>git config pull.rebase false</strong><br>&lt;press Enter&gt;<br><ol class="nested-list"><li>You should then be able to submit the assignment, as usual. If you’re hesitant, follow solution A, above.</li></ol></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="module-card" id="deleting-unused-codespaces">
+                <div class="module-body">
+                    <div class="module-section">
+                        <h3>Deleting unused Codespaces</h3>
+                        <p>Once you have successfully submitted your assignment, and have either pushed changes from your Codespace back to your GitHub repository, or locally downloaded any unsaved changes made in your Codespace, you <strong>must delete your Codespace</strong>. We cannot stress the importance of this, enough.</p><p><img src="./images/delete-codespace.png" alt="delete codespace" class="notebook-image"></p><p>GitHub offers limited resources for Codespaces, and if you exceed your quota, it will not reset again until all unused Codespaces have been decommissioned, with this resource disabled until GitHub resets it (which can vary from days to weeks).<br><br>To see all your active Codespaces at a glance, you can visit <a href="https://www.github.com/codespaces">www.github.com/codespaces</a>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="module-card" id="local-assignment-submission">
+                <div class="module-body">
+                    <div class="module-section">
+                        <h3>Local assignment submission</h3>
+                        <p>For those who prefer to work offline or bypass the Codespace method, you can complete assignments on your local machine using Microsoft Visual Studio Code (VS Code). This approach allows you to work without an active internet connection and submit your work when you reconnect by cloning the repository on GitHub to your local repository. From which any changes can be pushed back to main. For information on how to set this up, please read through the <a href="../PF0/course-setup.html">Course Setup</a> section in the <strong>Python Orientation</strong> materials.</p>
+                    </div>
+                </div>
+            </div>
+            
+        
+        <div class="page-navigation">
+            <a href="./live-lectures.html" class="nav-button prev">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+                Previous
+            </a>
+            <a href="./assignment-feedback.html" class="nav-button next">
+                Next
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+            </a></div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div>© All materials are copyright scryptIQ 2025</div>
+            <div>Powered by Pyodide</div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../assets/main.js"></script>
+    
+    <!-- Pyodide Initialisation Script -->
+    <script>
+
+// Generalisable Pyodide Initialisation Script
+// Variables and state build up naturally as code blocks execute in order
+
+async function main() {
+    // Show loading message for all output elements
+    document.querySelectorAll(".output").forEach(el => {
+        el.textContent = "Loading Pyodide...";
+        el.classList.add("loading-message");
+    });
+    
+    try {
+        // Load Pyodide
+        console.log("Loading Pyodide...");
+        const pyodideStartTime = performance.now();
+        let pyodide = await loadPyodide();
+        const pyodideLoadTime = performance.now() - pyodideStartTime;
+        console.log(`Pyodide loaded in ${pyodideLoadTime.toFixed(2)}ms`);
+        
+        // Load required packages only if specified
+        const lessonPackages = window.LESSON_PACKAGES || [];
+        
+        if (lessonPackages.length > 0) {
+            console.log("Loading required Python packages...");
+            const packagesStartTime = performance.now();
+            
+            // Separate built-in packages from PyPI packages
+            const builtInPackages = lessonPackages.filter(pkg => 
+                ['numpy', 'scipy', 'matplotlib', 'pandas', 'scikit-learn', 'pillow', 'regex'].includes(pkg)
+            );
+            
+            const micropipPackages = lessonPackages.filter(pkg => !builtInPackages.includes(pkg));
+            
+            // Load built-in packages (fast)
+            if (builtInPackages.length > 0) {
+                await pyodide.loadPackage(builtInPackages);
+                console.log(`Loaded built-in packages: ${builtInPackages.join(', ')}`);
+            }
+            
+            // Install PyPI packages (slower)
+            if (micropipPackages.length > 0) {
+                await pyodide.loadPackage(['micropip']);
+                const micropip = pyodide.pyimport('micropip');
+                await micropip.install(micropipPackages);
+                console.log(`Installed PyPI packages: ${micropipPackages.join(', ')}`);
+            }
+            
+            const packagesLoadTime = performance.now() - packagesStartTime;
+            console.log(`Packages loaded in ${packagesLoadTime.toFixed(2)}ms`);
+            console.log(`Total initialisation time: ${(pyodideLoadTime + packagesLoadTime).toFixed(2)}ms`);
+        } else {
+            console.log("No packages to load for this lesson");
+            console.log(`Total initialisation time: ${pyodideLoadTime.toFixed(2)}ms`);
+        }
+
+        // Only set up basic Python environment - no pre-loaded variables
+        await pyodide.runPythonAsync(`
+            import sys
+            from io import StringIO
+        `);
+
+        // Only set up matplotlib if it's in the loaded packages
+        if (lessonPackages.includes('matplotlib')) {
+            await pyodide.runPythonAsync(`
+                # Set up matplotlib for web rendering
+                import matplotlib
+                matplotlib.use('AGG')
+                import matplotlib.pyplot as plt
+                import io
+                import base64
+                
+                def capture_matplotlib():
+                    """Capture current matplotlib figure as HTML img tag"""
+                    buf = io.BytesIO()
+                    plt.savefig(buf, format='png', bbox_inches='tight', dpi=100)
+                    buf.seek(0)
+                    img_base64 = base64.b64encode(buf.read()).decode('utf-8')
+                    plt.close()
+                    return f'<img src="data:image/png;base64,{img_base64}" style="max-width: 100%; height: auto;" />'
+            `);
+            console.log('Matplotlib capture function set up');
+        }
+        
+        console.log("Pyodide loaded successfully");
+        
+        // Load remote files if URLs are specified
+        const lessonFiles = window.LESSON_FILES || [];
+        
+        if (lessonFiles.length > 0) {
+            try {
+                console.log(`Checking for ${lessonFiles.length} remote file(s) to load...`);
+                
+                // Build Python code to load all files dynamically
+                let pythonCode = `
+from pyodide.http import pyfetch
+import os
+
+# Create data directory if it doesn't exist
+os.makedirs('./data', exist_ok=True)
+`;
+                
+                // Add loading code for each file
+                for (const file of lessonFiles) {
+                    if (file.is_binary) {
+                        // Binary files (images, etc.) - use bytes
+                        pythonCode += `
+# Load ${file.filename} (binary)
+try:
+    response = await pyfetch("${file.url}")
+    content = await response.bytes()
+    with open('./data/${file.filename}', 'wb') as f:
+        f.write(bytes(content))
+    print("Loaded: ${file.filename}")
+except Exception as e:
+    print(f"Could not load ${file.filename}: {e}")
+`;
+                    } else {
+                        // Text files (CSV, etc.) - use string
+                        pythonCode += `
+# Load ${file.filename} (text)
+try:
+    response = await pyfetch("${file.url}")
+    content = await response.string()
+    with open('./data/${file.filename}', 'w') as f:
+        f.write(content)
+    print("Loaded: ${file.filename}")
+except Exception as e:
+    print(f"Could not load ${file.filename}: {e}")
+`;
+                    }
+                }
+                
+                await pyodide.runPythonAsync(pythonCode);
+                console.log("Remote files loaded successfully");
+            } catch (error) {
+                console.warn("Error loading remote files (continuing anyway):", error);
+            }
+        } else {
+            console.log("No remote files to load for this lesson");
+        }
+        
+        // Function to execute Python code and capture output
+        async function executePythonCode(code) {
+            try {
+                // Redirect Python stdout to capture print statements
+                await pyodide.runPythonAsync(`
+                    old_stdout = sys.stdout
+                    sys.stdout = mystdout = StringIO()
+                `);
+                
+                // Run the user code
+                const result = await pyodide.runPythonAsync(code);
+                
+                // Get the captured stdout
+                let stdout = await pyodide.runPythonAsync(`
+                    sys.stdout = old_stdout
+                    mystdout.getvalue()
+                `);
+                
+                // Check for matplotlib figures only if matplotlib was loaded
+                const lessonPackages = window.LESSON_PACKAGES || [];
+                if (lessonPackages.includes('matplotlib')) {
+                    const hasFigures = await pyodide.runPythonAsync(`
+                        import matplotlib.pyplot as plt
+                        len(plt.get_fignums()) > 0
+                    `);
+                    
+                    if (hasFigures) {
+                        const figureHtml = await pyodide.runPythonAsync(`capture_matplotlib()`);
+                        if (stdout) stdout += "\n";
+                        stdout += figureHtml;
+                    }
+                }
+                
+                // Combine stdout and result
+                let output = stdout;
+                if (result !== undefined && result !== null && String(result).trim() !== '') {
+                    if (output) output += "\n";
+                    output += String(result);
+                }
+                
+                return { success: true, output: output || "Code executed successfully (no output)" };
+                
+            } catch (error) {
+                return { success: false, output: "Error: " + error.message };
+            }
+        }
+        
+        // Execute all hidden code blocks first (for setup code like imports)
+        const hiddenCodeBlocks = Array.from(document.querySelectorAll('.hidden-code textarea'));
+        console.log(`Found ${hiddenCodeBlocks.length} hidden code blocks`);
+
+        for (const textarea of hiddenCodeBlocks) {
+            const code = textarea.value.trim();
+            if (!code) continue;
+            
+            console.log(`Executing hidden code block: ${textarea.id}`);
+            console.log(`Hidden code content: ${code.substring(0, 100)}...`);
+            const result = await executePythonCode(code);
+            
+            if (!result.success) {
+                console.error(`Error in hidden code block ${textarea.id}:`, result.output);
+            } else {
+                console.log(`Hidden code block ${textarea.id} executed successfully`);
+                console.log(`Result: ${result.output}`);
+            }
+        }
+
+        console.log("All hidden code blocks executed");
+        
+        // Get all fixed code blocks in document order
+        const fixedCodeBlocks = Array.from(document.querySelectorAll('.code-fixed textarea'));
+        
+        // Setup and execute fixed code blocks sequentially
+        for (const textarea of fixedCodeBlocks) {
+            const code = textarea.value.trim();
+            if (!code) continue;
+            
+            // Set up CodeMirror editor (read-only)
+            const editor = CodeMirror.fromTextArea(textarea, {
+                mode: "python",
+                theme: "pastel-on-dark",
+                lineNumbers: true,
+                readOnly: true,
+                viewportMargin: Infinity
+            });
+            
+            // Find corresponding output element
+            const outputId = textarea.id + '-output';
+            const outputElement = document.getElementById(outputId);
+            
+            if (outputElement) {
+                outputElement.textContent = "Running code...";
+                outputElement.classList.add("loading-message");
+                
+                // Execute the code (this maintains state for subsequent blocks)
+                const result = await executePythonCode(code);
+                
+                // Display the output - check if it's HTML
+                const trimmedOutput = result.output.trim();
+                console.log('Output length:', trimmedOutput.length);
+                console.log('Output starts with:', trimmedOutput.substring(0, 100));
+                
+                if (trimmedOutput.includes('<script') && trimmedOutput.includes('Plotly')) {
+                    // It's Plotly HTML output - extract just the body content
+                    console.log('Rendering as Plotly HTML');
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(result.output, 'text/html');
+                    // Clear the output element and append the body content
+                    outputElement.innerHTML = '';
+                    
+                    // Find and load external scripts first (like Plotly CDN)
+                    const externalScripts = Array.from(doc.querySelectorAll('script[src]'));
+                    const inlineScripts = Array.from(doc.querySelectorAll('script:not([src])'));
+                    
+                    // Append non-script content first
+                    Array.from(doc.body.children).forEach(child => {
+                        if (child.tagName !== 'SCRIPT') {
+                            outputElement.appendChild(child.cloneNode(true));
+                        }
+                    });
+                    
+                    // Load external scripts sequentially
+                    const loadScript = (src) => {
+                        return new Promise((resolve, reject) => {
+                            const script = document.createElement('script');
+                            script.src = src;
+                            script.onload = resolve;
+                            script.onerror = reject;
+                            document.head.appendChild(script);
+                        });
+                    };
+                    
+                    // Load all external scripts first
+                    Promise.all(externalScripts.map(s => loadScript(s.src)))
+                        .then(() => {
+                            console.log('External scripts loaded, executing inline scripts');
+                            // Now execute inline scripts
+                            inlineScripts.forEach(oldScript => {
+                                const newScript = document.createElement('script');
+                                newScript.textContent = oldScript.textContent;
+                                outputElement.appendChild(newScript);
+                            });
+                            console.log('Output element after processing:', outputElement.children.length, 'children');
+                        })
+                        .catch(err => {
+                            console.error('Failed to load external scripts:', err);
+                            outputElement.textContent = 'Error loading Plotly: ' + err.message;
+                        });
+                } else if (trimmedOutput.startsWith('<!DOCTYPE') || 
+                           trimmedOutput.startsWith('<html') ||
+                            trimmedOutput.startsWith('<div') ||
+                            trimmedOutput.startsWith('<img')) {
+                    console.log('Rendering as generic HTML');
+                    outputElement.innerHTML = result.output;
+                    console.log('Output element after innerHTML:', outputElement.children.length, 'children');
+                } else {
+                    console.log('Rendering as plain text');
+                    outputElement.textContent = result.output;
+                }
+                outputElement.classList.remove("loading-message");
+                if (result.success) {
+                    outputElement.classList.add("success-message");
+                    outputElement.classList.remove("error-message");
+                } else {
+                    outputElement.classList.add("error-message");
+                    outputElement.classList.remove("success-message");
+                }
+            }
+            
+            // Small delay to show progression
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        
+        // Set flag to indicate all FIXED cells have been executed
+        // This is used by PDF generation to ensure all outputs are ready
+        window.allCellsExecuted = true;
+        console.log("All FIXED cells executed successfully");
+        
+        // Setup all editable code blocks (but don't execute them)
+        document.querySelectorAll('.code-editor textarea').forEach((textarea) => {
+            // Set up CodeMirror editor (editable)
+            const editor = CodeMirror.fromTextArea(textarea, {
+                mode: "python",
+                theme: "pastel-on-dark",
+                lineNumbers: true,
+                viewportMargin: Infinity
+            });
+            
+            // Find corresponding run button and output element
+            const baseId = textarea.id;
+            const runButtonId = 'run-' + baseId;
+            const outputId = baseId + '-output';
+            
+            const runButton = document.getElementById(runButtonId);
+            const outputElement = document.getElementById(outputId);
+            
+            if (runButton && outputElement) {
+                // Set initial state
+                outputElement.textContent = "Ready to run code!";
+                outputElement.classList.remove("loading-message");
+                
+                runButton.addEventListener("click", async () => {
+                    const code = editor.getValue().trim();
+                    if (!code) {
+                        outputElement.textContent = "No code to run";
+                        return;
+                    }
+                    
+                    outputElement.textContent = "Running...";
+                    outputElement.classList.remove("error-message", "success-message");
+                    outputElement.classList.add("loading-message");
+                    
+                    // Execute the code (this also maintains state for future blocks)
+                    const result = await executePythonCode(code);
+                    
+                    // Display the output - check if it's HTML
+                    const trimmedOutput = result.output.trim();
+                    console.log('Output length:', trimmedOutput.length);
+                    console.log('Output starts with:', trimmedOutput.substring(0, 100));
+                    
+                    if (trimmedOutput.includes('<script') && trimmedOutput.includes('Plotly')) {
+                        // It's Plotly HTML output - extract just the body content
+                        console.log('Rendering as Plotly HTML');
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(result.output, 'text/html');
+                        // Clear the output element and append the body content
+                        outputElement.innerHTML = '';
+                        
+                        // Find and load external scripts first (like Plotly CDN)
+                        const externalScripts = Array.from(doc.querySelectorAll('script[src]'));
+                        const inlineScripts = Array.from(doc.querySelectorAll('script:not([src])'));
+                        
+                        // Append non-script content first
+                        Array.from(doc.body.children).forEach(child => {
+                            if (child.tagName !== 'SCRIPT') {
+                                outputElement.appendChild(child.cloneNode(true));
+                            }
+                        });
+                        
+                        // Load external scripts sequentially
+                        const loadScript = (src) => {
+                            return new Promise((resolve, reject) => {
+                                const script = document.createElement('script');
+                                script.src = src;
+                                script.onload = resolve;
+                                script.onerror = reject;
+                                document.head.appendChild(script);
+                            });
+                        };
+                        
+                        // Load all external scripts first
+                        Promise.all(externalScripts.map(s => loadScript(s.src)))
+                            .then(() => {
+                                console.log('External scripts loaded, executing inline scripts');
+                                // Now execute inline scripts
+                                inlineScripts.forEach(oldScript => {
+                                    const newScript = document.createElement('script');
+                                    newScript.textContent = oldScript.textContent;
+                                    outputElement.appendChild(newScript);
+                                });
+                                console.log('Output element after processing:', outputElement.children.length, 'children');
+                            })
+                            .catch(err => {
+                                console.error('Failed to load external scripts:', err);
+                                outputElement.textContent = 'Error loading Plotly: ' + err.message;
+                            });
+                    } else if (trimmedOutput.startsWith('<!DOCTYPE') || 
+                               trimmedOutput.startsWith('<html') ||
+                               trimmedOutput.startsWith('<div') ||
+                               trimmedOutput.startsWith('<img')) {
+                        outputElement.innerHTML = result.output;
+                    } else {
+                        outputElement.textContent = result.output;
+                    }
+                    outputElement.classList.remove("loading-message");
+                    if (result.success) {
+                        outputElement.classList.add("success-message");
+                        outputElement.classList.remove("error-message");
+                    } else {
+                        outputElement.classList.add("error-message");
+                        outputElement.classList.remove("success-message");
+                    }
+                });
+            }
+        });
+        
+        console.log("All code blocks initialised successfully");
+
+        // Set flag to indicate Pyodide is fully ready
+        window.pyodideReady = true;
+        console.log("Pyodide fully ready");
+        
+    } catch (error) {
+        console.error("Failed to initialise Pyodide:", error);
+        document.querySelectorAll(".output").forEach(el => {
+            el.textContent = "Error loading Pyodide: " + error.message;
+            el.classList.remove("loading-message");
+            el.classList.add("error-message");
+        });
+    }
+}
+
+// Start the application when DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', main);
+} else {
+    main();
+}
+    </script>
+</body>
+</html>
+    

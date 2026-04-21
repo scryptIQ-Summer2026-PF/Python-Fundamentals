@@ -192,23 +192,17 @@
         </div>
         <h4>Printing a string:</h4>
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-1"># FIXED WITH OUTPUT
-
-print(&quot;Welcome to L2D.&quot;)</textarea>
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-1">print(&quot;Welcome to L2D.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-1" class="run-button">Run Code</button>
             <div id="code-cell-1-output" class="output"></div>
         </div>
         <p>Note the Python function itself is called by typing the word <code>print</code>. It is then fed <strong>arguments</strong> in round parentheses. An <strong>argument</strong> is a piece of information that you pass into a function so that the function knows what to work with. Think of a function like a machine: the arguments are the <em>items you feed into the machine</em>, and the function then <em>processes</em> them in some way to give an output. Without arguments, many functions would not know what you want them to do, as they would have nothing to act on or process.<br><br>If we revert to the <code>print</code> statement in the code cell above, we can display exactly what we are writing: and to do this, we must specify the data as a <strong>string</strong>. A <strong>string</strong> is essentially a sequence of alphanumeric characters, that <code>print</code> can display in exactly the order in which they are typed. These will be covered in considerably more depth in our Python Fundamentals 2 lesson.<br><br>Specifying your argument as a string is achieved by using either <strong>single</strong> (<code>&#x27;...&#x27;</code>) or <strong>double</strong> (<code>&quot;...&quot;</code>) <strong>quotation marks</strong>. The use of single or double quotes is <em>interchangeable</em>, which also allows you to display quotes inside the output if you wish.<br><br>For example:</p>
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-2"># FIXED WITH OUTPUT
-
-print(&#x27;Welcome to L2D!&#x27;)   # single quotes
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-2">print(&#x27;Welcome to L2D!&#x27;)   # single quotes
 print(&quot;Welcome to L2D!&quot;)   # double quotes</textarea>
             </div>
-            <button id="run-code-cell-2" class="run-button">Run Code</button>
             <div id="code-cell-2-output" class="output"></div>
         </div>
         
@@ -270,12 +264,9 @@ print(&quot;Welcome to L2D!&quot;)   # double quotes</textarea>
         </div>
         
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-4"># FIXED WITH OUTPUT
-
-print(&#x27;A student said: &quot;L2D is a superb course.&quot;&#x27;)</textarea>
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-4">print(&#x27;A student said: &quot;L2D is a superb course.&quot;&#x27;)</textarea>
             </div>
-            <button id="run-code-cell-4" class="run-button">Run Code</button>
             <div id="code-cell-4-output" class="output"></div>
         </div>
         <p>In this example, we want the speech marks (double quotes) to appear in the printed output; hence, we have made use of single quotes to define the string. However, if we used double quotes around the whole sentence to specify the string to print (which already contains double quotes), we would end up with two pairs of double quotes next to each other, which would produce an error:</p>
@@ -300,22 +291,16 @@ print(&quot;A student said: &quot;L2D is a superb course.&quot;&quot;)</textarea
         </div>
         <h4>Optional arguments:</h4><p>Aside from printing strings, <code>print</code> is capable of a good deal more. To explain this, it is important to understand a further two, but not mutually exclusive, types of argument in Python: <strong>optional</strong> and <strong>keyword arguments</strong>.<br><br>To understand this further, let&#x27;s try and print multiple strings, in sequence. To do this, we pass each string as an argument into <code>print</code>, and we separate the strings out from one another using a comma: <code>,</code></p>
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-6"># FIXED WITH OUTPUT
-
-print(&quot;We are&quot;, &#x27;programming in Python.&#x27;)</textarea>
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-6">print(&quot;We are&quot;, &#x27;programming in Python.&#x27;)</textarea>
             </div>
-            <button id="run-code-cell-6" class="run-button">Run Code</button>
             <div id="code-cell-6-output" class="output"></div>
         </div>
         <p>In this example, notice that there are no spaces after the word &#x27;are&#x27; or before the word &#x27;programming&#x27;. There are two strings defined here, and yet somehow, <code>print</code> has automatically inserted a space between these two words, in the resulting output.<br><br>The reason for this, is that the print function has a <strong>default</strong> separator between items fed into it as arguments, and this is a simple <strong>space</strong>. This default setting, however, can be modulated and changed. For instance. We could specify that &#x27;---&#x27; is the separator that is used. In order to modulate this default setting we need to use what we term a <strong>keyword argument</strong>, and specify the value that we want it to replace the default of a space with. In the case of the <code>print</code> function this keyword argument is <code>sep</code>. By default, the value that <code>sep</code> is set to is a space: <code>sep=&#x27; &#x27;</code>, as indicated by the single space between the two quotes.<br><br>The keyword argument &#x27;sep&#x27; is also called a function parameter. A parameter is any variable name listed when defining a function, this will covered further in <strong>PF4</strong>.</p><p>The <code>sep</code> keyword argument is also termed an <strong>optional argument</strong> because, when it isn&#x27;t specified by the user, it has a <strong>value set to it, by default</strong>. As we go onto explore more functions in Python, you will see some keyword arguments arise that don&#x27;t have default values, and are &#x27;uncalled&#x27; by default, until specified by the user. But for now, <code>sep</code> has a default value, and is thus termed an optional argument.<br><br>To prove this point, let&#x27;s take the exact same line, and add in the optional argument <code>sep</code>, and set its value to be &#x27;---&#x27;.</p>
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-7"># FIXED WITH OUTPUT
-
-print(&quot;We are&quot;, &#x27;programming in Python.&#x27;, sep=&#x27;---&#x27;)</textarea>
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-7">print(&quot;We are&quot;, &#x27;programming in Python.&#x27;, sep=&#x27;---&#x27;)</textarea>
             </div>
-            <button id="run-code-cell-7" class="run-button">Run Code</button>
             <div id="code-cell-7-output" class="output"></div>
         </div>
         <p>Now you can see clearly, that the separator between arguments is set to the <code>---</code> (three hyphens) that we specified.</p>
@@ -422,24 +407,18 @@ print(&quot;We are&quot;, &#x27;programming in Python.&#x27;, sep=&#x27;---&#x27
         </div>
         
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-8"># FIXED WITH OUTPUT
-
-print(&#x27;Welcome to L2D!&#x27;)
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-8">print(&#x27;Welcome to L2D!&#x27;)
 print(&#x27;A biosciences-oriented Python course.&#x27;)</textarea>
             </div>
-            <button id="run-code-cell-8" class="run-button">Run Code</button>
             <div id="code-cell-8-output" class="output"></div>
         </div>
         <p>However, if we use the <code>end</code> optional argument, and set this value to a a single space &#x27; &#x27;, notice that the second print statement outputs on the same line:</p>
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-9"># FIXED WITH OUTPUT
-
-print(&#x27;Welcome to L2D!&#x27;, end=&#x27; &#x27;)
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-9">print(&#x27;Welcome to L2D!&#x27;, end=&#x27; &#x27;)
 print(&#x27;A biosciences-oriented Python course.&#x27;)</textarea>
             </div>
-            <button id="run-code-cell-9" class="run-button">Run Code</button>
             <div id="code-cell-9-output" class="output"></div>
         </div>
         
@@ -520,10 +499,8 @@ print(&quot;done&quot;)</textarea>
         </div>
         <p>The process of assigning data into a variable defines that variable, and is termed <strong>assignment</strong>.<br><br>The code cell below demonstrates the creation of two new variables (<code>answer</code> and <code>greeting</code>), with integer and string data being assigned to each, respectively. A variable can be named anything, contain alphanumeric and even punctuation characters, but cannot contain spaces. It is good practice to name a variable something logical or intelligible, pertaining to the data it contains.<br><br>In the example below, the variable names <code>answer</code> and <code>greeting</code> point to the integer <strong>42</strong> and the phrase &quot;<strong>Hello, L2D!</strong>&quot;, respectively. When you use these variable names later, Python will look up the stored value.<br><br>You can also reassign variables to hold new values, and Python will simply update what the name points to:</p>
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-11"># FIXED WITH OUTPUT
-
-# Assign the number 42 to a variable called answer
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-11"># Assign the number 42 to a variable called answer
 answer = 42
 
 # Assign a string to a variable called greeting
@@ -533,18 +510,14 @@ greeting = &quot;Hello, L2D!&quot;
 print(answer)      # displays 42
 print(greeting)    # displays Hello, L2D!</textarea>
             </div>
-            <button id="run-code-cell-11" class="run-button">Run Code</button>
             <div id="code-cell-11-output" class="output"></div>
         </div>
         <p>One of the most useful features of variables, is that you can <strong>reassign</strong> data to them, and replace their contents with new contents, by simply calling another assignment, subsequent to the first. The last assignment line in your code, reflects the value stored in the variable, after that point. When a value is reassigned to a variable, Python simply updates (and replaces) its contents with the new value:</p>
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-12"># FIXED WITH OUTPUT
-
-answer = 100
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-12">answer = 100
 print(answer)    # now displays 100</textarea>
             </div>
-            <button id="run-code-cell-12" class="run-button">Run Code</button>
             <div id="code-cell-12-output" class="output"></div>
         </div>
         <p>Variables can store many types of data — numbers, strings, lists, dictionaries, and more. As your the programs you write develop and grow, variables let you keep track of data, perform calculations, and manage information without having to repeat yourself.</p>
@@ -589,26 +562,25 @@ print(&quot;but only if it&#x27;s only&quot;, colour, &quot;and no other colours
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Interactive Python</h3>
-                        <h4>How it behaves:</h4><p>One (traditional) way to run your Python code, is by using Python scripts, and running these from the terminal. This is where your whole script or block of code can be saved as a file with the extension &#x27;.py&#x27;; to execute the code within your .py Python script, it must be called and run directly from the terminal, like this:<br><br><pre class="markdown-code-block"><code>python my_python_script.py</code></pre><br><br>In order to create a .py file, you can do so in a simple text editor application, making sure to simply change the file extension to .py. Or you can use a specialised code editor or Integrated Developer Environment (IDE).<br><br>However, another way to run your Python code - similar to how we are doing in this page - is to run individual cells within a <strong>Jupyter Notebook</strong> - a commonly-used file format that supports individual cells of different formats (for instance - you can merge text and images in <strong>markdown</strong> cells, and have executable <strong>Python</strong> cells for storing and running code).<br><br>One distinct behaviour of a Jupyter Notebook is that you don&#x27;t always have to explicitly use print. In a <strong>Jupyter Notebook</strong>, the output appears beneath the code cell. In a <strong>Python script</strong>, it appears in the terminal or shell window. Notably, Jupyter will also display the final value in a cell without needing <code>print()</code> -- a behaviour that doesn&#x27;t occur in a <code>.py</code> script:</p>
+                        <h4>How it behaves:</h4><p>One (traditional) way to run your Python code, is by using Python scripts, and running these from the terminal. This is where your whole script or block of code can be saved as a file with the extension <code>.py</code>. To execute the code within your <code>.py</code> Python script, it must be called and run directly from the terminal, like this:<br><br><pre class="markdown-code-block"><code>python my_python_script.py</code></pre><br><br>In order to create a <code>.py</code> file, you can do so in a simple text editor application, making sure to simply change the file extension to <code>.py</code>. Or you can use a specialised code editor or Integrated Developer Environment (IDE), see the <a href="../PF0/essential-tools.html#integrated-development-environments">Python Orientation</a> materials.<br><br>However, another way to run your Python code - similar to how we are doing in this page - is to run individual cells within a <strong>Jupyter Notebook</strong> - a commonly-used file format that supports individual cells of different formats (for instance - you can merge text and images in <strong>markdown</strong> cells, and have executable <strong>Python</strong> cells for storing and running code).<br><br>One distinct behaviour of a Jupyter Notebook is that you don&#x27;t always have to explicitly use print. In a <strong>Jupyter Notebook</strong>, the output appears beneath the code cell. In a <strong>Python script</strong>, it appears in the terminal or shell window. Notably, Jupyter will also display the final value in a cell without needing <code>print()</code> -- a behaviour that doesn&#x27;t occur in a <code>.py</code> script:</p>
         <div class="info-box key-terms-box">
             <div class="box-title">
                 <span class="box-icon"></span>
                 KEY TERMS
             </div>
             <div class="box-content">
-                <p><strong>Jupyter Notebooks</strong>:</p>
+                <p><strong>Jupyter Notebooks</strong>: An interactive coding environment that combines runnable code cells with markdown text, images, and outputs in a single document. Rather than writing a script and running it all at once, you execute individual cells and see the results immediately.</p>
             </div>
         </div>
         
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-14"># FIXED WITH OUTPUT
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-14">x = &quot;This is the contents of variable &#x27;x&#x27;.&quot;
 
-x = &quot;This is the contents of variable &#x27;x&#x27;.&quot;
-
-x  # iPython automatically displays the contents of variable x, just by leaving the variable as the last line of the cell. print() was not needed.</textarea>
+# iPython automatically displays the contents of variable x, 
+# just by leaving the variable as the last line of the cell. print() was not needed.
+x  </textarea>
             </div>
-            <button id="run-code-cell-14" class="run-button">Run Code</button>
             <div id="code-cell-14-output" class="output"></div>
         </div>
         
@@ -636,22 +608,17 @@ y  # But since y is now the last of the cell, it will display the contents of y 
                         <h3>F-strings</h3>
                         <p>Variables can also integrate directly into print statements within a <strong>formatted string literal</strong>, also known as <strong>f-strings</strong>. F-strings offer a legible, flexible way to include variables or expressions directly into strings (the characters entered between single or double quotes).<br><br>Up until this point, we have been printing variables as individual, standalone arguments, separated from strings by a comma. The code cell below demonstrates how a variable can be directly incorporated into an f-string. The syntax of an f-string is that - as with an ordinary string - its start and end are contained within single or double quote marks, except these are preceeded by the letter <code>f</code>, with variables inserted directly into the strings in curly brackets, as below:</p>
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-16"># FIXED WITH OUTPUT
-
-dose = 7.5
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-16">dose = 7.5
 
 print(f&quot;The dose is: {dose} mg.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-16" class="run-button">Run Code</button>
             <div id="code-cell-16-output" class="output"></div>
         </div>
         <p>F-strings are not limited to simple text or numbers: you can use them with variables of many different <strong>data types</strong> in Python. These include integers (<code>int</code>), floating point numbers (<code>float</code>), strings (<code>str</code>), Boolean values (<code>bool</code>), as well as collections such as lists (<code>list</code>), tuples (<code>tuple</code>), and dictionaries (<code>dict</code>): we have not encountered many of these data types yet, but will introduce them more explicitly, later in the lesson.<br><br>When you insert a variable into an f-string, Python automatically converts its value into a string representation so that it can be displayed. You can even combine this with the <code>type()</code> function - a function that tells you what type of data an object contains - inside the curly brackets to see both the value of the variable and its data type. This makes f-strings a powerful and flexible way to check, debug, and present a wide variety of information in your programs.</p>
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-17"># FIXED WITH OUTPUT
-
-# Examples of different data types
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-17"># Examples of different data types
 
 patient_id = 12345          # int
 temperature = 36.7          # float  
@@ -663,10 +630,22 @@ print(f&quot;Temperature: {temperature} (type: {type(temperature)}).\n&quot;)
 print(f&quot;Sample: {sample_name} (type: {type(sample_name)}).\n&quot;)
 print(f&quot;Test positive: {is_positive} (type: {type(is_positive)}).\n&quot;)</textarea>
             </div>
-            <button id="run-code-cell-17" class="run-button">Run Code</button>
             <div id="code-cell-17-output" class="output"></div>
         </div>
         <p>You will encounter both f-strings and the <code>type()</code> function throughout this course.</p>
+        <div class="code-area">
+            <div class="code-container code-editor">
+                <textarea id="code-cell-18"># Create an the f-string here given the variables
+
+your_name = 
+random_word = &quot;penguin&quot; 
+
+print{f&quot;I, &quot;}</textarea>
+            </div>
+            <button id="run-code-cell-18" class="run-button">Run Code</button>
+            <div id="code-cell-18-output" class="output"></div>
+        </div>
+        
                     </div>
                 </div>
             </div>
@@ -699,42 +678,42 @@ print(f&quot;Test positive: {is_positive} (type: {type(is_positive)}).\n&quot;)<
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-18"># To work in a browser this will generate a pop-up. 
+                <textarea id="code-cell-19"># To work in a browser this will generate a pop-up. 
 # If your browser blocks pop-ups, this may not appear.
 
 name = input(&quot;Enter your name: &quot;)
 print(&quot;Hello&quot;, name, &quot;!&quot;)</textarea>
             </div>
-            <button id="run-code-cell-18" class="run-button">Run Code</button>
-            <div id="code-cell-18-output" class="output"></div>
+            <button id="run-code-cell-19" class="run-button">Run Code</button>
+            <div id="code-cell-19-output" class="output"></div>
         </div>
         <h4>Prompt customisation with `input()`:</h4><p>Uniquely, whatever data type you enter into the <code>input()</code> function, it will <strong>always convert this into a string</strong>.<br><br>Run the code cell below, enter your age as an integer, and notice the data type that it returns for your collected input:</p>
         <div class="code-area hidden-code" style="display: none;">
             <div class="code-container">
-                <textarea id="code-cell-19">import js
+                <textarea id="code-cell-20">import js
 
 def input(prompt=&quot;&quot;):
     return js.prompt(prompt)</textarea>
             </div>
-            <div id="code-cell-19-output" class="output" style="display: none;"></div>
+            <div id="code-cell-20-output" class="output" style="display: none;"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-20">age = input(&quot;Enter your age: &quot;)
+                <textarea id="code-cell-21">age = input(&quot;Enter your age: &quot;)
 print(f&quot;You are {age} years old. \nThe data you just entered has been converted into type: {type(age)}.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-20" class="run-button">Run Code</button>
-            <div id="code-cell-20-output" class="output"></div>
+            <button id="run-code-cell-21" class="run-button">Run Code</button>
+            <div id="code-cell-21-output" class="output"></div>
         </div>
         <p>In this example, the variable <code>age</code> now contains your age (which you entered as a whole number, or integer), stored as data of type string (or <code>str</code>). So far, we have encountered two data types in this lesson: string and integer (data type <code>str</code> and <code>int</code>, respectively).<br><br>If we then wish to convert this string data into an integer (data type <code>int</code>), we must explicitly convert data type <code>str</code> to <code>int</code>. We call this data conversion <strong>typecasting</strong>, which is covered in greater detail in the section on <strong>data types</strong>, later in this lesson.<br><br>In order to explicitly convert or typecast <code>str</code> into <code>int</code> when a user enters a whole number, you can <strong>wrap</strong> the <code>input()</code> function call with the <code>int()</code> function to convert the string into an integer. In programming, the term <strong>wrapping</strong> refers to placing one function call or operation <em>around</em> another; this is often done by placing one function call <strong>inside the round parentheses of another</strong>. In this way, <strong>the output of the inner function, becomes the input of the outer function</strong>.<br><br>Run the code in the cell below, and you will notice that the input is collected and typecasted, in a single line. The contents of the <code>age</code> variable, is now the user-collected input given as an integer (data type <code>int</code>).</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-21">age = int(input(&quot;Please enter your age: &quot;))
+                <textarea id="code-cell-22">age = int(input(&quot;Please enter your age: &quot;))
 print(f&quot;Your age of {age} years old, has been typecasted from a string into data type {type(age)}.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-21" class="run-button">Run Code</button>
-            <div id="code-cell-21-output" class="output"></div>
+            <button id="run-code-cell-22" class="run-button">Run Code</button>
+            <div id="code-cell-22-output" class="output"></div>
         </div>
         
                     </div>
@@ -758,10 +737,10 @@ print(f&quot;Your age of {age} years old, has been typecasted from a string into
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-22"></textarea>
+                <textarea id="code-cell-23"></textarea>
             </div>
-            <button id="run-code-cell-22" class="run-button">Run Code</button>
-            <div id="code-cell-22-output" class="output"></div>
+            <button id="run-code-cell-23" class="run-button">Run Code</button>
+            <div id="code-cell-23-output" class="output"></div>
         </div>
         
                     </div>
@@ -844,7 +823,7 @@ print(f&quot;Your age of {age} years old, has been typecasted from a string into
                         <p>Python allows <strong>type conversion</strong>, also known as <strong>typecasting</strong>, to change a value&#x27;s type. This is crucial when dealing with data from external sources, user input, or read-in files.<br><br>Typecasting is often necessary when the type of data you have is not the type you need for an operation. Our earlier example of the <code>input()</code> function above, explains why it could be necessary.<br><br>If you want to perform calculations with that number, you must <em>typecast</em> the string into an integer using the <code>int()</code> function, or into a floating-point (decimal) number using the <code>float()</code> function. Likewise, you can turn numbers into strings with the <code>str()</code> function, which can useful for combining numbers with text, to give customised output.</p><p>Aside from <code>str</code> and <code>int</code>, typecasting can also be important when moving between other types of data. For instance, typecasting can also come up when working with numeric data, booleans (<code>True</code> or <code>False</code>), and missing values.<br><br>As an example, you might be analysing gene expression levels, measured as floating-point (decimal) values. You may want to simplify these into a simpler expressed <em>vs.</em> not expressed binary, and one way to do this is by typecasting the values into a <strong>Boolean</strong> value of data type <code>bool</code>.<br><br>A <strong>Boolean</strong> is a data type in Python that represents one of two possible values: <code>True</code> or <code>False</code>. Booleans are used to express logical conditions — for example, whether a statement is correct, whether a comparison holds, or whether something is present or absent.<br><br>You can convert a data value into a Boolean using Python&#x27;s built-in <code>bool()</code> function. This converts a value into a Boolean (<code>True</code> or <code>False</code>), following these two simple rules:<br><ul class="nested-list"><li>Values that are <strong>non-empty</strong> or <strong>non-zero</strong> become <code>True</code>.</li><br><li>Values that are considered <strong>empty</strong> or <strong>zero</strong> become <code>False</code>. This also includes the datatype <code>None</code> given in the table above for values that are missing, which are also converted to the Boolean <code>False</code>.</li></ul>This is an implicit condition of this function. Later in this lesson we will explore <strong>conditional statements</strong> - a construct in Python used to execute a block of code depending on whether a specific condition is met, or not. In a nearly similar fasion, the <code>bool</code> function implicitly <em>evaluates</em> a value: with non-zero being converted into <code>True</code>, and zero or missing values are <code>False</code>.<br><br>In the cell below, try changing the value assigned to the variable <code>expression_level</code> and see how the <code>bool</code> function responds:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-23">expression_level = 1.0 # Gene expression level in arbitrary units (float).
+                <textarea id="code-cell-24">expression_level = 1.0 # Gene expression level in arbitrary units (float).
 
 is_expressed = bool(expression_level) # Typecast to boolean.
 
@@ -854,8 +833,8 @@ print(&quot;Is the gene expressed?&quot;, is_expressed)
 missing_value = None # Handling missing values
 print(&quot;Missing value is treated as:&quot;, bool(missing_value))</textarea>
             </div>
-            <button id="run-code-cell-23" class="run-button">Run Code</button>
-            <div id="code-cell-23-output" class="output"></div>
+            <button id="run-code-cell-24" class="run-button">Run Code</button>
+            <div id="code-cell-24-output" class="output"></div>
         </div>
         <p>Python&#x27;s built-in classes for typecasting one data type into another, will sometimes only expect to see a specific type of input. For example, the <code>float()</code> class will generate a <code>ValueError</code> if you feed it a string as input. For reference, the table below lists the various classes used for typecasting in Python, the inputs they expect, and the outputs they give:</p>
         <div class="info-box note-box">
@@ -998,100 +977,76 @@ print(&quot;Missing value is treated as:&quot;, bool(missing_value))</textarea>
 </tbody>
 </table><p>Observe the output of the code in the cells below, to see each of these operators in action:</p>
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-24"># FIXED WITH NO OUTPUT
-
-# Let&#x27;s begin by defining two variables to use in our calculations:
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-25"># Let&#x27;s begin by defining two variables to use in our calculations:
 
 a = 12
 b = 5</textarea>
             </div>
-            <button id="run-code-cell-24" class="run-button">Run Code</button>
-            <div id="code-cell-24-output" class="output"></div>
+            <div id="code-cell-25-output" class="output" style="display: none;"></div>
         </div>
         
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-25"># FIXED WITH OUTPUT
-
-# Addition:
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-26"># Addition:
 
 a + b</textarea>
             </div>
-            <button id="run-code-cell-25" class="run-button">Run Code</button>
-            <div id="code-cell-25-output" class="output"></div>
-        </div>
-        
-        <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-26"># FIXED WITH OUTPUT
-
-# Subtraction:
-
-a - b</textarea>
-            </div>
-            <button id="run-code-cell-26" class="run-button">Run Code</button>
             <div id="code-cell-26-output" class="output"></div>
         </div>
         
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-27"># FIXED WITH OUTPUT
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-27"># Subtraction:
 
-# Multiplication:
-
-a * b</textarea>
+a - b</textarea>
             </div>
-            <button id="run-code-cell-27" class="run-button">Run Code</button>
             <div id="code-cell-27-output" class="output"></div>
         </div>
         
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-28"># FIXED WITH OUTPUT
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-28"># Multiplication:
 
-# Division:
-
-a / b</textarea>
+a * b</textarea>
             </div>
-            <button id="run-code-cell-28" class="run-button">Run Code</button>
             <div id="code-cell-28-output" class="output"></div>
         </div>
         
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-29"># FIXED WITH OUTPUT
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-29"># Division:
 
-# Floor division:
-
-a // b</textarea>
+a / b</textarea>
             </div>
-            <button id="run-code-cell-29" class="run-button">Run Code</button>
             <div id="code-cell-29-output" class="output"></div>
         </div>
         
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-30"># FIXED WITH OUTPUT
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-30"># Floor division:
 
-# Modulus (remainder):
-
-a % b</textarea>
+a // b</textarea>
             </div>
-            <button id="run-code-cell-30" class="run-button">Run Code</button>
             <div id="code-cell-30-output" class="output"></div>
         </div>
         
         <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-31"># FIXED WITH OUTPUT
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-31"># Modulus (remainder):
 
-# Exponentiation:
+a % b</textarea>
+            </div>
+            <div id="code-cell-31-output" class="output"></div>
+        </div>
+        
+        <div class="code-area">
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-32"># Exponentiation:
 
 a ** b</textarea>
             </div>
-            <button id="run-code-cell-31" class="run-button">Run Code</button>
-            <div id="code-cell-31-output" class="output"></div>
+            <div id="code-cell-32-output" class="output"></div>
         </div>
         
                     </div>
@@ -1115,12 +1070,12 @@ a ** b</textarea>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-32"># You can edit these variables
+                <textarea id="code-cell-33"># You can edit these variables
 x = 11
 y = 4</textarea>
             </div>
-            <button id="run-code-cell-32" class="run-button">Run Code</button>
-            <div id="code-cell-32-output" class="output"></div>
+            <button id="run-code-cell-33" class="run-button">Run Code</button>
+            <div id="code-cell-33-output" class="output"></div>
         </div>
         
                     </div>
@@ -1134,7 +1089,7 @@ y = 4</textarea>
                         <h4>The `abs()` function:</h4><p>Alongside operators, Python also provides another useful built-in function for working with numbers. This is the <code>abs()</code> function, which returns the <strong>absolute value</strong> of a number. The absolute value represents the number’s distance from zero, with any <strong>negative sign removed</strong>.<br><br>Run the code in the cell below to understand how this works:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-33"># Absolute difference in cell count
+                <textarea id="code-cell-34"># Absolute difference in cell count
 
 initial_cells = 5000
 final_cells = 3800
@@ -1144,8 +1099,8 @@ change = final_cells - initial_cells
 print(f&quot;Change:                 {change}&quot;)
 print(f&quot;Absolute difference:     {abs(change)}&quot;)    # absolute difference = 1200</textarea>
             </div>
-            <button id="run-code-cell-33" class="run-button">Run Code</button>
-            <div id="code-cell-33-output" class="output"></div>
+            <button id="run-code-cell-34" class="run-button">Run Code</button>
+            <div id="code-cell-34-output" class="output"></div>
         </div>
         <p>In this example, you can see how <code>abs()</code> is particularly useful when dealing with changes, <strong>where only the magnitude of the difference matters</strong>, irrespective of whether the difference represents an <em>increase</em> or <em>decrease</em>.<br><br>In the example code cell, above, a drop in white blood cell count of <code>-1200</code> and a rise of <code>1200</code> both have the same absolute change in value. And in such situations, using <code>abs()</code> can be a useful way of standardising lots of output.</p>
                     </div>

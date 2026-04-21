@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+jobs:
+  run-composite-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout caller repository
+        uses: actions/checkout@v6
+      
+      - name: Checkout parchmentIQ repository  
+        uses: actions/checkout@v6
+        with:
+          repository: ScryptIQ-ai/parchmentIQ
+          ref: main
+          path: parchmentiq-repo
+          token: ${{ github.actor == 'DrAdamLee' && secrets.PARCHMENTIQ_PAT_AL || secrets.PARCHMENTIQ_PAT }}
+      - name: Run Homepage Generation
+        uses: ./parchmentiq-repo/actions/homepage-generation
+  
+  deploy:
+    needs: run-composite-action
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

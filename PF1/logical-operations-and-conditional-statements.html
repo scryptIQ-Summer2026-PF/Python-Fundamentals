@@ -17,12 +17,12 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     
     <!-- Pyodide and CodeMirror -->
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/pastel-on-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/theme/pastel-on-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/mode/python/python.min.js"></script>
+
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
@@ -30,7 +30,7 @@
     <link rel="apple-touch-icon" sizes="192x192" href="../assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../assets/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../assets/android-chrome-512x512.png">
-    
+
     <!-- Core Stylesheets -->
     <link rel="stylesheet" href=../assets/colours.css>
     <link rel="stylesheet" href="../assets/shared-styles.css">
@@ -40,15 +40,12 @@
     <link rel="stylesheet" href="../assets/learning_lists.css">
     <link rel="stylesheet" href="../assets/box_styles.css">
     <link rel="stylesheet" href="../assets/code_styles.css">
-
+    
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L2D - PF1 - Logical Operations and Conditional Statements</title>
-    
-    <!-- File URLs for this lesson -->
+    <title>scryptIQ - PF1 - Logical Operations and Conditional Statements</title>
     <script>window.LESSON_FILES = []; window.LESSON_PACKAGES = [];</script>
-        
 </head>
 <body>
     
@@ -62,13 +59,13 @@
 
         <h3>Content</h3>
         <ul>
-            <li><a href="./introduction.html" class="">Introduction</a></li><li><a href="./input-output-operations.html">Input/Output Operations</a></li>
+            <li><a href="./introduction.html" class="">Introduction</a></li><li><a href="./input-output-operations.html">Input/Output Operations</a></li><li><a href="./data-and-operations.html">Working with Data</a></li>
             <li>
-                <div class="nav-toggle active" data-target="expandable-section-2">
+                <div class="nav-toggle active" data-target="expandable-section-3">
                     Logical Operations and Conditional Statements
                     <span class="toggle-icon">▼</span>
                 </div>
-                <ul class="nested-nav expanded" id="expandable-section-2"><li><a href="#introduction">Introduction</a></li><li><a href="#logical-operations-in-python">Logical Operations in Python</a></li><li><a href="#what-is-a-conditional-statement">What is a conditional statement?</a></li><li><a href="#summary">Summary</a></li>
+                <ul class="nested-nav expanded" id="expandable-section-3"><li><a href="#introduction">Introduction</a></li><li><a href="#logical-operations-in-python">Logical Operations in Python</a></li><li><a href="#what-is-a-conditional-statement">What is a conditional statement?</a></li><li><a href="#summary">Summary</a></li>
                 </ul>
             </li><li><a href="./errors-in-python.html">Errors in Python</a></li><li><a href="./assignment.html">Assignment</a></li><li><a href="./feedback.html">Feedback</a></li>
         </ul>
@@ -97,10 +94,10 @@
             <li><a href="./report-issue.html">Report an Issue</a></li>
         </h3>
     </div>
-    
+
     <!-- Sidebar Toggle Button -->
     <button id="sidebar-toggle" class="sidebar-toggle">❮</button>
-    
+
     <!-- Main Content Area -->
     <div id="main-content" class="main-content">
         <!-- Top Navigation Bar -->
@@ -155,108 +152,108 @@
         <p>Let&#x27;s define the values of two variables (as integers), in the code cell below:</p>
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-35"># Define variables:
+                <textarea id="code-cell-36"># Define variables:
 
 a = 5
 b = 6</textarea>
             </div>
-            <div id="code-cell-35-output" class="output" style="display: none;"></div>
+            <div id="code-cell-36-output" class="output" style="display: none;"></div>
         </div>
         <p>We can then use the comparative operator <code>==</code> (also referred to as the <strong>equality operator</strong>) to check whether one value is equal to another.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-36"># Equality operator (==)
+                <textarea id="code-cell-37"># Equality operator (==)
 
 a == b</textarea>
-            </div>
-            <div id="code-cell-36-output" class="output"></div>
-        </div>
-        
-        <div class="code-area">
-            <div class="code-container code-fixed">
-                <textarea id="code-cell-37"># Inequality operator (!=)
-
-a != b</textarea>
             </div>
             <div id="code-cell-37-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-38"># Less-than operator (&lt;)
+                <textarea id="code-cell-38"># Inequality operator (!=)
 
-a &lt; b</textarea>
+a != b</textarea>
             </div>
             <div id="code-cell-38-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-39"># Greater-than operator (&gt;)
+                <textarea id="code-cell-39"># Less-than operator (&lt;)
 
-a &gt; b</textarea>
+a &lt; b</textarea>
             </div>
             <div id="code-cell-39-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-40"># Less-than-or-equal operator (&lt;=)
+                <textarea id="code-cell-40"># Greater-than operator (&gt;)
 
-a &lt;= b</textarea>
+a &gt; b</textarea>
             </div>
             <div id="code-cell-40-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-41"># Greater-than-or-equal operator (&gt;=)
+                <textarea id="code-cell-41"># Less-than-or-equal operator (&lt;=)
 
-a &gt;= b</textarea>
+a &lt;= b</textarea>
             </div>
             <div id="code-cell-41-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-42"># Logical conjunction (and)
+                <textarea id="code-cell-42"># Greater-than-or-equal operator (&gt;=)
 
-# Checks that both conditions on the left and right of the `and` operator are met.
-
-a == 5 and b == 6</textarea>
+a &gt;= b</textarea>
             </div>
             <div id="code-cell-42-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-43"># Logical disjunction (or)
+                <textarea id="code-cell-43"># Logical conjunction (and)
 
-# Checks that either the condition on the left or that on the right of the `or` operator, is met.
+# Checks that both conditions on the left and right of the `and` operator are met.
 
-a == 5 or b == 10</textarea>
+a == 5 and b == 6</textarea>
             </div>
             <div id="code-cell-43-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-44"># Logical negation (not)
+                <textarea id="code-cell-44"># Logical disjunction (or)
 
-# Checks that the condition inside the round brackets is NOT met.
+# Checks that either the condition on the left or that on the right of the `or` operator, is met.
 
-not (a == b)</textarea>
+a == 5 or b == 10</textarea>
             </div>
             <div id="code-cell-44-output" class="output"></div>
         </div>
         
         <div class="code-area">
+            <div class="code-container code-fixed">
+                <textarea id="code-cell-45"># Logical negation (not)
+
+# Checks that the condition inside the round brackets is NOT met.
+
+not (a == b)</textarea>
+            </div>
+            <div id="code-cell-45-output" class="output"></div>
+        </div>
+        
+        <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-45"># Have a play around with the logical operations yourself
+                <textarea id="code-cell-46"># Have a play around with the logical operations yourself
 </textarea>
             </div>
-            <button id="run-code-cell-45" class="run-button">Run Code</button>
-            <div id="code-cell-45-output" class="output"></div>
+            <button id="run-code-cell-46" class="run-button">Run Code</button>
+            <div id="code-cell-46-output" class="output"></div>
         </div>
         
         <div class="info-box fact-box">
@@ -290,12 +287,12 @@ not (a == b)</textarea>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-46"># You can edit these variables
+                <textarea id="code-cell-47"># You can edit these variables
 x = 20
 y = 80</textarea>
             </div>
-            <button id="run-code-cell-46" class="run-button">Run Code</button>
-            <div id="code-cell-46-output" class="output"></div>
+            <button id="run-code-cell-47" class="run-button">Run Code</button>
+            <div id="code-cell-47-output" class="output"></div>
         </div>
         
                     </div>
@@ -316,29 +313,29 @@ y = 80</textarea>
                 <p><strong>Conditional statements</strong>: A pythonic statement that dictates when to execute a block of code.</p>
             </div>
         </div>
-        <h4>Conditional statement type: `if`</h4><p>For the first time in the course so far, we will also see the importance of <strong>indentations</strong> in Python. Let&#x27;s start with the Python keyword <code>if</code> as the first illustrative example. Its syntax specifies that <code>if</code> is followed by a condition, and then a colon <code>:</code>. If you hit return, you will notice that your cursor will automatically be tabbed inwards by a one-tab or four-space indentation. This indentation defines the <strong>scope</strong> of the conditional statement&#x27;s executable code. For example, in the example below - if the patient&#x27;s temperature is above 37.5ºC, the print statement will run. If the condition is not satisfied, the code will not execute:</p>
+        <h4>Conditional statement type: if</h4><p>For the first time in the course so far, we will also see the importance of <strong>indentations</strong> in Python. Let&#x27;s start with the Python keyword <code>if</code> as the first illustrative example. Its syntax specifies that <code>if</code> is followed by a condition, and then a colon <code>:</code>. If you hit return, you will notice that your cursor will automatically be tabbed inwards by a one-tab or four-space indentation. This indentation defines the <strong>scope</strong> of the conditional statement&#x27;s executable code. For example, in the example below - if the patient&#x27;s temperature is above 37.5ºC, the print statement will run. If the condition is not satisfied, the code will not execute:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-47"># Flanking a number with &lt; &gt; can set a range
+                <textarea id="code-cell-48"># Flanking a number with &lt; &gt; can set a range
 temperature = 38
 
 if 37.5 &lt; temperature &lt;= 41.0:
     print(f&quot;The patient is hyperthermic and has a fever, with a temperature of {temperature}ºC.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-47" class="run-button">Run Code</button>
-            <div id="code-cell-47-output" class="output"></div>
+            <button id="run-code-cell-48" class="run-button">Run Code</button>
+            <div id="code-cell-48-output" class="output"></div>
         </div>
         <p>If the lines that follow the conditional statement are <em>not</em> indented by a single indentation (or four spaces), the code will fall <em>out</em> of the scope of the conditional, and will be executed, irrespective of the condition being met.<br><br>In the code cell below, the temperature is RUN at 35, which does not meet the condition of our <code>if</code> statement; but still, our print statement at the bottom of the code block will run, regardless:</p>
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-48">temperature = 35.0
+                <textarea id="code-cell-49">temperature = 35.0
 
 if 37.5 &lt; temperature &lt;= 41.0:
     print(f&quot;The patient is hyperthermic and has a fever, with a temperature of {temperature}ºC.&quot;)
 
 print(&quot;Regardless of the condition, this line will always print.&quot;) # This line isn&#x27;t indented.</textarea>
             </div>
-            <div id="code-cell-48-output" class="output"></div>
+            <div id="code-cell-49-output" class="output"></div>
         </div>
         
         <div class="info-box key-terms-box">
@@ -350,10 +347,10 @@ print(&quot;Regardless of the condition, this line will always print.&quot;) # T
                 <p><strong>Coding indentations</strong>: Visual indentations in the written code. Typically indicating a defined block of code, such as after a conditional statement or when defining a function.</p>
             </div>
         </div>
-        <h4>Conditional statement type: `elif`</h4><p>Following on with this logic in mind, we can look at the <code>elif</code> conditional (note this is named as shorthand for &#x27;else if&#x27;). These always follow an <code>if</code> conditional, and explicitly state that if the condition of the <code>if</code> isn&#x27;t met, then proceed to the next <code>elif</code> statement. <code>elif</code> follows the same syntactical rules as <code>if</code>, in that the <code>elif</code> keyword is followed by both a condition and a colon <code>:</code>, with newline characters automatically indenting a single tab-space in, to specify the code within its scope. This code is then executed if the condition of the <code>elif</code> statement is met.<br><br>Let&#x27;s develop the above example to illustrate this. For ease, we will predefine the temperature in the code, and not use the <code>input()</code> function.</p>
+        <h4>Conditional statement type: elif</h4><p>Following on with this logic in mind, we can look at the <code>elif</code> conditional (note this is named as shorthand for &#x27;else if&#x27;). These always follow an <code>if</code> conditional, and explicitly state that if the condition of the <code>if</code> isn&#x27;t met, then proceed to the next <code>elif</code> statement. <code>elif</code> follows the same syntactical rules as <code>if</code>, in that the <code>elif</code> keyword is followed by both a condition and a colon <code>:</code>, with newline characters automatically indenting a single tab-space in, to specify the code within its scope. This code is then executed if the condition of the <code>elif</code> statement is met.<br><br>Let&#x27;s develop the above example to illustrate this. For ease, we will predefine the temperature in the code, and not use the <code>input()</code> function.</p>
         <div class="code-area">
             <div class="code-container code-fixed">
-                <textarea id="code-cell-49">temperature = 35.5
+                <textarea id="code-cell-50">temperature = 35.5
 
 if 37.5 &lt; temperature &lt;= 41.0:
     print(f&quot;The patient is hyperthermic and has a fever, with a temperature of {temperature}ºC.&quot;)
@@ -361,7 +358,7 @@ if 37.5 &lt; temperature &lt;= 41.0:
 elif 35.0 &lt;= temperature &lt; 36.0:
     print(f&quot;The patient is mildly hypothermic, with a temperature of {temperature}ºC.&quot;)</textarea>
             </div>
-            <div id="code-cell-49-output" class="output"></div>
+            <div id="code-cell-50-output" class="output"></div>
         </div>
         
         <div class="info-box remember-box">
@@ -376,7 +373,7 @@ elif 35.0 &lt;= temperature &lt; 36.0:
         <p>The condition of the above <code>elif</code> statement means that the print statement will print, only if the temperature is greater than or equal to 35.5 <em>and</em> less than 36.0.<br><br>We can continue, and add another two <code>elif</code> statements to define normal body temperature and severe hypothermia, as follows. The <code>input</code> function has been reintroduced, so that you can easily change the temperature, to see which condition you satisfy, and thus, which statement is printed:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-50"># Change the temperature to test the conditional statements
+                <textarea id="code-cell-51"># Change the temperature to test the conditional statements
 
 temperature = 38.0
 
@@ -396,13 +393,13 @@ elif 28.0 &lt; temperature &lt; 35.0:
 elif 36.0 &lt;= temperature &lt;= 37.5:
     print(f&quot;The patient’s temperature is normal, with a temperature of {temperature}ºC.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-50" class="run-button">Run Code</button>
-            <div id="code-cell-50-output" class="output"></div>
+            <button id="run-code-cell-51" class="run-button">Run Code</button>
+            <div id="code-cell-51-output" class="output"></div>
         </div>
-        <h4>Conditional statement type: `else`</h4><p>The final type of conditional statement is <code>else</code>. This specifies that if all conditions specified in your code are <em>not</em> met then - irrespective of the condition - this block of code will always execute. Think of it as a final &#x27;catch-all&#x27; statement. So long as there is an <code>else</code> statement in your code, something will always execute.<br><br>We can build on our example, and add in an <code>else</code> statement: this specifies that all values not within the ranges specified by <em>any</em> of the conditional statements in our code, will tell our Python interpreter to execute the <code>else</code> statement&#x27;s code.</p>
+        <h4>Conditional statement type: else</h4><p>The final type of conditional statement is <code>else</code>. This specifies that if all conditions specified in your code are <em>not</em> met then - irrespective of the condition - this block of code will always execute. Think of it as a final &#x27;catch-all&#x27; statement. So long as there is an <code>else</code> statement in your code, something will always execute.<br><br>We can build on our example, and add in an <code>else</code> statement: this specifies that all values not within the ranges specified by <em>any</em> of the conditional statements in our code, will tell our Python interpreter to execute the <code>else</code> statement&#x27;s code.</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-51"># Change the temperature to test the conditional statements
+                <textarea id="code-cell-52"># Change the temperature to test the conditional statements
 
 temperature = 42.0
 
@@ -425,8 +422,8 @@ elif 36.0 &lt;= temperature &lt;= 37.5:
 else:
     print(f&quot;The patient’s temperature is at a critical level of {temperature}ºC: potentially fatal.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-51" class="run-button">Run Code</button>
-            <div id="code-cell-51-output" class="output"></div>
+            <button id="run-code-cell-52" class="run-button">Run Code</button>
+            <div id="code-cell-52-output" class="output"></div>
         </div>
         
                     </div>
@@ -450,13 +447,13 @@ else:
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-52">a = 5
+                <textarea id="code-cell-53">a = 5
 b = 6.8
 
 # Write your conditional statement here:</textarea>
             </div>
-            <button id="run-code-cell-52" class="run-button">Run Code</button>
-            <div id="code-cell-52-output" class="output"></div>
+            <button id="run-code-cell-53" class="run-button">Run Code</button>
+            <div id="code-cell-53-output" class="output"></div>
         </div>
         
                     </div>
@@ -472,9 +469,9 @@ b = 6.8
                 </div>
             </div>
             
-        
+
         <div class="page-navigation">
-            <a href="./input-output-operations.html" class="nav-button prev">
+            <a href="./data-and-operations.html" class="nav-button prev">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
                 </svg>
@@ -486,7 +483,7 @@ b = 6.8
                     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
                 </svg>
             </a></div>
-        
+
         <!-- Footer -->
         <div class="footer">
             <div>© All materials are copyright scryptIQ 2025</div>
@@ -949,6 +946,6 @@ if (document.readyState === 'loading') {
     main();
 }
     </script>
+    
 </body>
 </html>
-    

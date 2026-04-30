@@ -17,12 +17,12 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     
     <!-- Pyodide and CodeMirror -->
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/pastel-on-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/theme/pastel-on-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/mode/python/python.min.js"></script>
+
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
@@ -30,7 +30,7 @@
     <link rel="apple-touch-icon" sizes="192x192" href="../assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../assets/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../assets/android-chrome-512x512.png">
-    
+
     <!-- Core Stylesheets -->
     <link rel="stylesheet" href=../assets/colours.css>
     <link rel="stylesheet" href="../assets/shared-styles.css">
@@ -40,15 +40,12 @@
     <link rel="stylesheet" href="../assets/learning_lists.css">
     <link rel="stylesheet" href="../assets/box_styles.css">
     <link rel="stylesheet" href="../assets/code_styles.css">
-
+    
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L2D - PF1 - Errors in Python</title>
-    
-    <!-- File URLs for this lesson -->
+    <title>scryptIQ - PF1 - Errors in Python</title>
     <script>window.LESSON_FILES = []; window.LESSON_PACKAGES = [];</script>
-        
 </head>
 <body>
     
@@ -62,13 +59,13 @@
 
         <h3>Content</h3>
         <ul>
-            <li><a href="./introduction.html" class="">Introduction</a></li><li><a href="./input-output-operations.html">Input/Output Operations</a></li><li><a href="./logical-operations-and-conditional-statements.html">Logical Operations and Conditional Statements</a></li>
+            <li><a href="./introduction.html" class="">Introduction</a></li><li><a href="./input-output-operations.html">Input/Output Operations</a></li><li><a href="./data-and-operations.html">Working with Data</a></li><li><a href="./logical-operations-and-conditional-statements.html">Logical Operations and Conditional Statements</a></li>
             <li>
-                <div class="nav-toggle active" data-target="expandable-section-3">
+                <div class="nav-toggle active" data-target="expandable-section-4">
                     Errors in Python
                     <span class="toggle-icon">▼</span>
                 </div>
-                <ul class="nested-nav expanded" id="expandable-section-3"><li><a href="#introduction">Introduction</a></li><li><a href="#syntax-errors">Syntax errors</a></li><li><a href="#runtime-errors">Runtime errors</a></li><li><a href="#error-handling">Error handling</a></li><li><a href="#summary">Summary</a></li>
+                <ul class="nested-nav expanded" id="expandable-section-4"><li><a href="#introduction">Introduction</a></li><li><a href="#syntax-errors">Syntax errors</a></li><li><a href="#runtime-errors">Runtime errors</a></li><li><a href="#error-handling">Error handling</a></li><li><a href="#summary">Summary</a></li>
                 </ul>
             </li><li><a href="./assignment.html">Assignment</a></li><li><a href="./feedback.html">Feedback</a></li>
         </ul>
@@ -97,10 +94,10 @@
             <li><a href="./report-issue.html">Report an Issue</a></li>
         </h3>
     </div>
-    
+
     <!-- Sidebar Toggle Button -->
     <button id="sidebar-toggle" class="sidebar-toggle">❮</button>
-    
+
     <!-- Main Content Area -->
     <div id="main-content" class="main-content">
         <!-- Top Navigation Bar -->
@@ -153,19 +150,9 @@
                         <p>We have already defined these as errors that arise when Python’s “grammar” or language rules have been broken. They prevent the program from even starting to run, because the interpreter cannot make sense of the code structure. Syntax errors are often the first type of error that new programmers encounter, and the good news is that they are usually easy to spot once you know what to look for.<br><br>Common examples of syntax errors include:<br><ul class="nested-list"><li><strong>Missing or unmatched quotes</strong> – forgetting to close a string with the same quotation mark you opened it with</li><br><li><strong>Missing or unmatched parentheses</strong> – leaving out a bracket, or using one too many</li><br><li><strong>Missing colons</strong> – forgetting the colon <code>:</code> that must follow an <code>if</code>, <code>elif</code>, <code>else</code> conditional (as we looked at, previously) or later on in the course, a <code>for</code> and <code>while</code> loop</li><br><li><strong>Incorrect indentation</strong> – not lining up code blocks with the correct number of spaces or tabs</li><br><li><strong>Misspelled keywords</strong> – for instance, typing <code>pritn</code> instead of <code>print</code>, or <code>esle</code> instead of <code>else</code></li><br><li><strong>Illegal characters</strong> – including symbols or characters that Python does not recognise</li></ul>When Python encounters one of these problems, it produces a <code>SyntaxError</code> message and highlights the part of the code it cannot interpret. The caret <code>^</code> symbol in an error message often <em>points to the exact spot</em> where the interpreter got confused. It may not always be the true location of the mistake, but it is usually close by. Developing the habit of carefully reading error messages and checking for these common issues is the first step towards becoming fluent in <strong>debugging</strong> - a term used to describe spotting errors or &#x27;bugs&#x27; in code that impede its execution.<br><br>We will generate each of the different types of <code>SyntaxError</code> in the cells, below:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-53"># Missing quotes around a string:
+                <textarea id="code-cell-54"># Missing quotes around a string:
 
 print(&quot;Gene symbol: BRCA1)</textarea>
-            </div>
-            <button id="run-code-cell-53" class="run-button">Run Code</button>
-            <div id="code-cell-53-output" class="output"></div>
-        </div>
-        
-        <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-54"># Unmatched parentheses around a function&#x27;s arguments:
-
-print(&quot;Heart rate (bpm):&quot;, heart_rate</textarea>
             </div>
             <button id="run-code-cell-54" class="run-button">Run Code</button>
             <div id="code-cell-54-output" class="output"></div>
@@ -173,12 +160,9 @@ print(&quot;Heart rate (bpm):&quot;, heart_rate</textarea>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-55"># Missing colon in a conditional statement:
+                <textarea id="code-cell-55"># Unmatched parentheses around a function&#x27;s arguments:
 
-temperature = 38.2
-
-if temperature &gt; 37.5
-    print(&quot;Fever detected&quot;)</textarea>
+print(&quot;Heart rate (bpm):&quot;, heart_rate</textarea>
             </div>
             <button id="run-code-cell-55" class="run-button">Run Code</button>
             <div id="code-cell-55-output" class="output"></div>
@@ -186,12 +170,12 @@ if temperature &gt; 37.5
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-56"># Missing indentation in a conditional statement:
+                <textarea id="code-cell-56"># Missing colon in a conditional statement:
 
-wbc = 12000
+temperature = 38.2
 
-if wbc &gt; 11000:
-print(&quot;Leukocytosis&quot;)  # This line should be indented (one tab, or four spaces)</textarea>
+if temperature &gt; 37.5
+    print(&quot;Fever detected&quot;)</textarea>
             </div>
             <button id="run-code-cell-56" class="run-button">Run Code</button>
             <div id="code-cell-56-output" class="output"></div>
@@ -199,7 +183,20 @@ print(&quot;Leukocytosis&quot;)  # This line should be indented (one tab, or fou
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-57"># Misspelling:
+                <textarea id="code-cell-57"># Missing indentation in a conditional statement:
+
+wbc = 12000
+
+if wbc &gt; 11000:
+print(&quot;Leukocytosis&quot;)  # This line should be indented (one tab, or four spaces)</textarea>
+            </div>
+            <button id="run-code-cell-57" class="run-button">Run Code</button>
+            <div id="code-cell-57-output" class="output"></div>
+        </div>
+        
+        <div class="code-area">
+            <div class="code-container code-editor">
+                <textarea id="code-cell-58"># Misspelling:
 
 bmi = 31.4
 
@@ -209,18 +206,18 @@ if bmi &gt;= 30:
 esle:                       # In this line, &#x27;else&#x27; is misspelled.
     print(&quot;Not obese.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-57" class="run-button">Run Code</button>
-            <div id="code-cell-57-output" class="output"></div>
+            <button id="run-code-cell-58" class="run-button">Run Code</button>
+            <div id="code-cell-58-output" class="output"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-58"># Illegal characters:
+                <textarea id="code-cell-59"># Illegal characters:
 
 glucose@level = 5.6   # The &#x27;@&#x27; character is not allowed in a variable name</textarea>
             </div>
-            <button id="run-code-cell-58" class="run-button">Run Code</button>
-            <div id="code-cell-58-output" class="output"></div>
+            <button id="run-code-cell-59" class="run-button">Run Code</button>
+            <div id="code-cell-59-output" class="output"></div>
         </div>
         <p>Upon reading the error messages, among the many things you will have noticed, is how informative they are. Not only do they diagnose the error and its location in your code, but they often also offer suggested fixes.</p>
         <div class="info-box note-box">
@@ -244,21 +241,9 @@ glucose@level = 5.6   # The &#x27;@&#x27; character is not allowed in a variable
                         <p>Unlike syntax errors, which prevent completley prevent a program from running, <strong>runtime errors</strong> occur <em>while</em> the program is already running. Thus, a <code>RuntimeError</code> indicates that the code is written in a way that Python can understand <em>syntactically</em>, but when it tries to execute a particular line, something goes wrong along the way. Runtime errors are also referred to as <strong>exceptions</strong>, as they represent when the program&#x27;s normal flow is interrupted, in some way. They are among the most common errors you will encounter as you gain experience, and your programs build both in terms of complexity and interactivity.<br><br>A key feature of runtime errors is that they stop your program only <em>at the point where the problem occurs</em>. Everything <em>before</em> the error will have run successfully, but nothing after it will execute until the error is resolved.<br><br>The error message provides a <em>traceback</em> that explains what type of error occurred, together with the exact line number where the problem was triggered. A traceback is a unique type of error message in Python, where a report of all the steps the interpreter ran successfully up until the point of the error, are listed out. If and where applicable, this traceback will tell you the file name, line number and the type of error which, again, informs the user as copiously as possible, so that debugging is made easy.<br><br>Common types of runtime errors include:<br><ul class="nested-list"><li><strong><code>NameError</code></strong> – using a variable that has not been defined</li><br><li><strong><code>TypeError</code></strong> – performing an operation on the wrong data type (e.g. <code>&quot;DNA&quot; + 5</code>)</li><br><li><strong><code>ValueError</code></strong> – passing an invalid value to a function (e.g. <code>int(&quot;gene&quot;)</code>)</li><br><li><strong><code>ZeroDivisionError</code></strong> – attempting to divide a number by zero</li><br><li><strong><code>IndexError</code></strong> – trying to access a position outside the bounds of a list or string</li><br><li><strong><code>KeyError</code></strong> – looking up a dictionary key that does not exist</li><br><li><strong><code>ImportError</code> / <code>ModuleNotFoundError</code></strong> – when Python cannot locate the module you are trying to import</li></ul>By learning to read and interpret these error messages, you can quickly trace back to the source of the problem and decide how best to correct it.<br><br>In the cells below, let&#x27;s generate some runtime errors, and see a few of these examples, in action.</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-59"># NameError – referring to a variable that has not been defined:
+                <textarea id="code-cell-60"># NameError – referring to a variable that has not been defined:
 
 print(gene_sequence)</textarea>
-            </div>
-            <button id="run-code-cell-59" class="run-button">Run Code</button>
-            <div id="code-cell-59-output" class="output"></div>
-        </div>
-        
-        <div class="code-area">
-            <div class="code-container code-editor">
-                <textarea id="code-cell-60"># TypeError – performing an operation on the wrong data type:
-
-dna = &quot;ATCG&quot;
-
-print(dna + 5)   # Adding or concatenating a string + integer is not valid.</textarea>
             </div>
             <button id="run-code-cell-60" class="run-button">Run Code</button>
             <div id="code-cell-60-output" class="output"></div>
@@ -266,9 +251,11 @@ print(dna + 5)   # Adding or concatenating a string + integer is not valid.</tex
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-61"># ValueError – passing an invalid value to a function:
+                <textarea id="code-cell-61"># TypeError – performing an operation on the wrong data type:
 
-int(&quot;adenine&quot;)   # Cannot convert letters into an integer.</textarea>
+dna = &quot;ATCG&quot;
+
+print(dna + 5)   # Adding or concatenating a string + integer is not valid.</textarea>
             </div>
             <button id="run-code-cell-61" class="run-button">Run Code</button>
             <div id="code-cell-61-output" class="output"></div>
@@ -276,15 +263,25 @@ int(&quot;adenine&quot;)   # Cannot convert letters into an integer.</textarea>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-62"># ZeroDivisionError – attempting to divide a number by zero:
+                <textarea id="code-cell-62"># ValueError – passing an invalid value to a function:
+
+int(&quot;adenine&quot;)   # Cannot convert letters into an integer.</textarea>
+            </div>
+            <button id="run-code-cell-62" class="run-button">Run Code</button>
+            <div id="code-cell-62-output" class="output"></div>
+        </div>
+        
+        <div class="code-area">
+            <div class="code-container code-editor">
+                <textarea id="code-cell-63"># ZeroDivisionError – attempting to divide a number by zero:
 
 cell_count = 1000
 replicates = 0
 
 average = cell_count / replicates</textarea>
             </div>
-            <button id="run-code-cell-62" class="run-button">Run Code</button>
-            <div id="code-cell-62-output" class="output"></div>
+            <button id="run-code-cell-63" class="run-button">Run Code</button>
+            <div id="code-cell-63-output" class="output"></div>
         </div>
         
         <div class="info-box remember-box">
@@ -299,35 +296,35 @@ average = cell_count / replicates</textarea>
         <h4>Errors you&#x27;ll see in the future</h4><p>The errors you will see below are specific to some data structures in Python that we will be exploring in more detail in the next modules <strong>PF2</strong> and <strong>PF3</strong>. We&#x27;ll give a brief description here for you to understand the error, however there will be more information in the future to understand the terminology properly.</p><p>Below is a <strong>list</strong> which is a type of data structure that can store multiple &#x27;elements&#x27; or items (covered in <strong>PF2</strong>), which can be accessed individually using a technique or system called <strong>indexing</strong>.<br><br>In the case where an index is given that is greater than the actual number of elements in the list, you get a specific error known as an <code>IndexError</code>, as demonstrated, below:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-63"># IndexError – trying to access a position outside the bounds of a list or string:
+                <textarea id="code-cell-64"># IndexError – trying to access a position outside the bounds of a list or string:
 
 genes = [&quot;BRCA1&quot;, &quot;TP53&quot;, &quot;EGFR&quot;]
 
 print(genes[5])   # The</textarea>
             </div>
-            <button id="run-code-cell-63" class="run-button">Run Code</button>
-            <div id="code-cell-63-output" class="output"></div>
+            <button id="run-code-cell-64" class="run-button">Run Code</button>
+            <div id="code-cell-64-output" class="output"></div>
         </div>
         <p>Similarly, this error is attributed to another type of associative data structure called a <strong>dictionary</strong> (covered in <strong>PF3</strong>), which contains multiple key:value pairs. A value is accessed by using its associated key, and if a key is used that is not in the dictionary, you get a specific <code>KeyError</code> as shown, below&quot;:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-64"># KeyError – looking up a dictionary key that does not exist
+                <textarea id="code-cell-65"># KeyError – looking up a dictionary key that does not exist
 
 expression = {&quot;BRCA1&quot;: 2.5, &quot;TP53&quot;: 4.1}
 
 print(expression[&quot;MYC&quot;])   # &quot;MYC&quot; key not in dictionary</textarea>
             </div>
-            <button id="run-code-cell-64" class="run-button">Run Code</button>
-            <div id="code-cell-64-output" class="output"></div>
+            <button id="run-code-cell-65" class="run-button">Run Code</button>
+            <div id="code-cell-65-output" class="output"></div>
         </div>
         <p>Lastly, in Python you can import modules or packages of code to expand Python (covered in <strong>PF3</strong>). In short, these are authored collections of Python functions, methods and attributes that allow users to perform specific functions, not included in Python, by default. They, therefore, often have to be explicitly imported and installed to be implemented in your code. In the case that they haven&#x27;t been, Python will throw a <code>ModuleNotFoundError</code>, as demonstrated, below:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-65"># ImportError / ModuleNotFoundError – module cannot be found
+                <textarea id="code-cell-66"># ImportError / ModuleNotFoundError – module cannot be found
 import genomics_toolkit   # not a real or installed module</textarea>
             </div>
-            <button id="run-code-cell-65" class="run-button">Run Code</button>
-            <div id="code-cell-65-output" class="output"></div>
+            <button id="run-code-cell-66" class="run-button">Run Code</button>
+            <div id="code-cell-66-output" class="output"></div>
         </div>
         
         <div class="info-box key-terms-box">
@@ -348,41 +345,59 @@ import genomics_toolkit   # not a real or installed module</textarea>
                 <div class="module-body">
                     <div class="module-section">
                         <h3>Error handling</h3>
-                        <h4>`try` and `except`:</h4><p>So far, we have covered how exceptions are raised whenever Python encounters a problem during execution. By default, these exceptions stop the program <em>completely</em>, which is often helpful for debugging but not always desirable if you want your program to continue running, just to see how far it gets, for instance.<br><br>Python therefore provides an elegant way to <em>handle</em> exceptions using the keywords <code>try</code> and <code>except</code>. This allows you to wrap a block of code in a <code>try</code> statement, and if an exception occurs, the program will <em>catch</em> it and execute the code inside the corresponding <code>except</code> block instead of crashing. This is not dissimilar to how a conditional statement works, in that if an error occurs, an alternative &#x27;route&#x27; through the program is provided, to try and circumvent it.<br><br>In this way, <code>try</code> and <code>except</code> give you tight control over how your program responds to errors, enabling you to display useful messages back to the console, take alternative actions or safely recover the point you reached without stopping the entire program. If your program is editing, writing or overwriting important data, for example, these recovery options can be invaluable in preventing irreparable damage from occurring.</p><h4>Syntax</h4><p>Similar to the conditional statements we looked at earlier in this lesson, the <code>try</code> keyword is followed by a colon <code>:</code>, and hitting return auto-indents the next line by a single tab space. All lines on this indentation level will then specify the code that is <em>wrapped</em> by the <code>try</code> keyword.<br><br>If we exit the scope of <code>try</code> on a new line, we can then use the <code>except</code> keyword, to specify alternative &#x27;solution&#x27; code, should a particular runtime error or exception occur in the <code>try</code> block.<br><br>See below a <code>try - except</code> block where there is <strong>no</strong> error:</p>
+                        <h4>try and except:</h4><p>So far, we have covered how exceptions are raised whenever Python encounters a problem during execution. By default, these exceptions stop the program <em>completely</em>, which is often helpful for debugging but not always desirable if you want your program to continue running. You may ask why you would want to keep the code running when an error is being given of which there are two broad categories:<ol class="nested-list"><li>You are de-bugging (fixing) your code and you want to move past an error you can&#x27;t fix in the moment</li><br><li>For permanent solutions, where you know every now and then an input will create an error, but you have a solution to elegantly handle it</li></ol></p><p>Python therefore provides an elegant way to <em>handle</em> exceptions using the keywords <code>try</code> and <code>except</code>. This allows you to wrap a block of code in a <code>try</code> statement, and if an exception occurs, the program will <em>catch</em> it and execute the code inside the corresponding <code>except</code> block instead of crashing. This is not dissimilar to how a conditional statement works, in that if an error occurs, an alternative &#x27;route&#x27; through the program is provided, to try and circumvent it.<br><br>In this way, <code>try</code> and <code>except</code> give you tight control over how your program responds to errors, enabling you to display useful messages back to the console, take alternative actions or safely recover the point you reached without stopping the entire program. If your program is editing, writing or overwriting important data, for example, these recovery options can be invaluable in preventing irreparable damage from occurring.</p>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/-BwmPGQlhds"
+                width="560"
+                height="315"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <h4>Syntax</h4><p>Similar to the conditional statements we looked at earlier in this lesson, the <code>try</code> keyword is followed by a colon <code>:</code>, and hitting return auto-indents the next line by a single tab space. All lines on this indentation level will then specify the code that is <em>wrapped</em> by the <code>try</code> keyword.<br><br>If we exit the scope of <code>try</code> on a new line, we can then use the <code>except</code> keyword, to specify alternative &#x27;solution&#x27; code, should a particular runtime error or exception occur in the <code>try</code> block.<br><br>See below a <code>try - except</code> block where there is <strong>no</strong> error:</p>
         <div class="code-area">
-            <div class="code-container code-fixed">
-                <textarea id="code-cell-66">try:
+            <div class="code-container code-editor">
+                <textarea id="code-cell-67">try:
+
     # your code block here
     # try editing this code to produce an error
     x= 2
+
 except:
+    
     # what to do if an error / exception occurs
-    print(&quot;Not what we expected&quot;)</textarea>
+    print(&quot;Not what we expected&quot;)
+
+x</textarea>
             </div>
-            <div id="code-cell-66-output" class="output" style="display: none;"></div>
+            <button id="run-code-cell-67" class="run-button">Run Code</button>
+            <div id="code-cell-67-output" class="output"></div>
         </div>
         <h4>In practice</h4><p>Lets run through a typical workflow for finding an error and adding <code>try</code> <code>except</code> to handle it.</p><p>Often we write code that works perfectly during development, but breaks when exposed to new data, giving us error messages. Upon examining the input and error, we might find that the code itself is sound, it simply cannot handle an outlier data point. A common example in data analytics is encountering zeroes when dividing, which raises a <code>ZeroDivisionError</code>.<br><br>Run the code in the cell below to see an example of the error:</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-67">cell_count = 1000
+                <textarea id="code-cell-68">cell_count = 1000
 replicates = 0
 
 average = cell_count / replicates
 
 print(f&quot;Average cells per replicate: {average}&quot;)</textarea>
             </div>
-            <button id="run-code-cell-67" class="run-button">Run Code</button>
-            <div id="code-cell-67-output" class="output"></div>
+            <button id="run-code-cell-68" class="run-button">Run Code</button>
+            <div id="code-cell-68-output" class="output"></div>
         </div>
         <p>Since zeroes appearing in our data is quite likely, we need a way to handle them gracefully in our workflow. This is where <code>try</code> and <code>except</code> come in. We wrap the problematic code in a <code>try</code> block and use <code>except</code> to define what should happen if an error occurs. Instead of Python crashing with an error, it runs the code in the <code>except</code> block as an alternative response.</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-68"># ZeroDivisionError
+                <textarea id="code-cell-69"># ZeroDivisionError
+
+cell_count = 1000
+replicates = 0
+
 
 try:
-
-    cell_count = 1000
-    replicates = 0
 
     average = cell_count / replicates
     
@@ -392,18 +407,21 @@ except:
     
     print(&quot;Error: number of replicates cannot be zero.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-68" class="run-button">Run Code</button>
-            <div id="code-cell-68-output" class="output"></div>
+            <button id="run-code-cell-69" class="run-button">Run Code</button>
+            <div id="code-cell-69-output" class="output"></div>
         </div>
         <p>The error handling above works with all errors, not just <code>ZeroDivisionError</code>. This can be useful if you want to bypass a block of code that&#x27;s repeatedly throwing errors. However, in production code you should be <em>explicit</em> about which errors you want to handle. We do this by specifying the expected error type after <code>except</code>.</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-69"># Explicit ZeroDivisionError catch
+                <textarea id="code-cell-70"># Explicit ZeroDivisionError catch
+
+cell_count = 1000
+replicates = 0
 
 try:
 
-    cell_count = 1000
-    replicates = 0
+    # Try adding a non ZeroDivisionError
+    # here to see the effect
 
     average = cell_count / replicates
     
@@ -413,8 +431,8 @@ except ZeroDivisionError:
     
     print(&quot;Error: number of replicates cannot be zero.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-69" class="run-button">Run Code</button>
-            <div id="code-cell-69-output" class="output"></div>
+            <button id="run-code-cell-70" class="run-button">Run Code</button>
+            <div id="code-cell-70-output" class="output"></div>
         </div>
         
                     </div>
@@ -432,21 +450,21 @@ except ZeroDivisionError:
             </div>
             <div class="box-content">
                 <p><strong>8.</strong></p>
-                <p>You have recorded a single measurement from an experiment. Write a program that:<ol class="nested-list"><li>Uses a <code>try</code>/<code>except</code> block to attempt to convert the measurement</li></ol>to a float (this will test if it is a float)<ol class="nested-list"><li>Uses a conditional statement to classify it as <code>&quot;low&quot;</code>, <code>&quot;normal&quot;</code>,</li></ol>or <code>&quot;high&quot;</code> based on the thresholds below inside the try block<br>Thresholds:<ul class="nested-list"><li>low: less than 1.0</li><br><li>normal: greater than 1.0 and less than, but equal to 2.0</li><br><li>high:  greater than 2.0</li></ul><em>Test your code with both of the values given in the cell below:</em></p>
+                <p>You have recorded a single measurement from an experiment. Write a program that:<ol class="nested-list"><li>Uses a <code>try</code>/<code>except</code> block to attempt to convert the measurement to a float (this will test if it is a float)</li><br><li>Uses a conditional statement to classify it as <code>&quot;low&quot;</code>, <code>&quot;normal&quot;</code>, or <code>&quot;high&quot;</code> based on the thresholds below inside the try block</li></ol>Thresholds:<ul class="nested-list"><li>low: less than 1.0</li><br><li>normal: greater than 1.0 and less than, but equal to 2.0</li><br><li>high:  greater than 2.0</li></ul><em>Test your code with both of the values given in the cell below:</em></p>
             </div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-70">measurement = &quot;N/A&quot;   # test 1
+                <textarea id="code-cell-71">measurement = &quot;N/A&quot;   # test 1
 measurement = 1.7     # test 2
 measurement = 0.1     # test 3
 
 # Write your try/except block here:
 </textarea>
             </div>
-            <button id="run-code-cell-70" class="run-button">Run Code</button>
-            <div id="code-cell-70-output" class="output"></div>
+            <button id="run-code-cell-71" class="run-button">Run Code</button>
+            <div id="code-cell-71-output" class="output"></div>
         </div>
         
                     </div>
@@ -460,17 +478,17 @@ measurement = 0.1     # test 3
                         <p>Similarly, run the cell below, and enter your age as a word, and a <code>ValueError</code> will raise, because the <code>int</code> class expects numeric characters as input, only. In this case, instead of Python&#x27;s internal error reporting displaying, the <code>except</code> statement&#x27;s code will execute:</p>
         <div class="code-area hidden-code" style="display: none;">
             <div class="code-container">
-                <textarea id="code-cell-71">import js
+                <textarea id="code-cell-72">import js
 
 def input(prompt=&quot;&quot;):
     return js.prompt(prompt)</textarea>
             </div>
-            <div id="code-cell-71-output" class="output" style="display: none;"></div>
+            <div id="code-cell-72-output" class="output" style="display: none;"></div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-72"># ValueError
+                <textarea id="code-cell-73"># ValueError
 
 try:
 
@@ -482,13 +500,13 @@ except ValueError:
 
     print(&quot;Error: please enter the age as a number, not text.&quot;)</textarea>
             </div>
-            <button id="run-code-cell-72" class="run-button">Run Code</button>
-            <div id="code-cell-72-output" class="output"></div>
+            <button id="run-code-cell-73" class="run-button">Run Code</button>
+            <div id="code-cell-73-output" class="output"></div>
         </div>
         <p>Lastly, rather than printing an error statement we can use the exception to execute a block of code. A common use for this, is to set a variable that would have ordinarily been given in the <code>try</code> block; so as not to cause an error in the code further down the script.</p>
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-73"># Calculating concentration
+                <textarea id="code-cell-74"># Calculating concentration
 total_volume = 0  # Empty sample
 substance_amount = 5.2
 
@@ -502,8 +520,8 @@ except ZeroDivisionError:
 
 print(f&quot;Concentration: {concentration}&quot;)</textarea>
             </div>
-            <button id="run-code-cell-73" class="run-button">Run Code</button>
-            <div id="code-cell-73-output" class="output"></div>
+            <button id="run-code-cell-74" class="run-button">Run Code</button>
+            <div id="code-cell-74-output" class="output"></div>
         </div>
         
                     </div>
@@ -521,19 +539,19 @@ print(f&quot;Concentration: {concentration}&quot;)</textarea>
             </div>
             <div class="box-content">
                 <p><strong>9.</strong></p>
-                <p>A sensor has returned a reading, but it may be corrupted. All readings outputted by sensor are a string, i.e. &quot;1.2&quot;, when the reading is corrupted the value is given as an empty string (&quot;&quot;).<br>Write a try/except block that first converts the string into a float, saving the variable as <code>float_reading</code>. If the conversion fails, have the exception block save to the variable <code>float_reading</code> the value <strong>0.0</strong>. Finally, outside of the block, print the readings using an f-string:<br>Expected output:<br><pre class="markdown-code-block"><code>&quot;Final reading: 2.4&quot;</code></pre><br>Test out your code with both of the readings below:</p>
+                <p>A sensor has returned a reading, although it may be corrupted.<br>All readings outputted by sensor are a string, i.e. &quot;1.2&quot;, however when the reading is corrupted the value is given as an empty string (&quot;&quot;).<br>Write a try/except block that:<ol class="nested-list"><li>First converts the string into a float, saving the variable as <code>float_reading</code>.</li><br><li>If the conversion fails, have the exception block save to the variable <code>float_reading</code> the value <strong>0.0</strong>.</li><br><li>Finally, outside of the block, print the readings using an f-string:</li></ol>Expected output:<br><pre class="markdown-code-block"><code>&quot;Final reading: 2.4&quot;</code></pre><br>Test out your code with both of the readings below:</p>
             </div>
         </div>
         
         <div class="code-area">
             <div class="code-container code-editor">
-                <textarea id="code-cell-74">reading1 = &quot;2.5&quot;
+                <textarea id="code-cell-75">reading1 = &quot;2.5&quot;
 reading2 = &quot;&quot;
 
 # Write your block here:</textarea>
             </div>
-            <button id="run-code-cell-74" class="run-button">Run Code</button>
-            <div id="code-cell-74-output" class="output"></div>
+            <button id="run-code-cell-75" class="run-button">Run Code</button>
+            <div id="code-cell-75-output" class="output"></div>
         </div>
         
                     </div>
@@ -549,7 +567,7 @@ reading2 = &quot;&quot;
                 </div>
             </div>
             
-        
+
         <div class="page-navigation">
             <a href="./logical-operations-and-conditional-statements.html" class="nav-button prev">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -563,7 +581,7 @@ reading2 = &quot;&quot;
                     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
                 </svg>
             </a></div>
-        
+
         <!-- Footer -->
         <div class="footer">
             <div>© All materials are copyright scryptIQ 2025</div>
@@ -1026,6 +1044,6 @@ if (document.readyState === 'loading') {
     main();
 }
     </script>
+    
 </body>
 </html>
-    

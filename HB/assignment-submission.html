@@ -17,12 +17,12 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     
     <!-- Pyodide and CodeMirror -->
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/pastel-on-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/theme/pastel-on-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/mode/python/python.min.js"></script>
+
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
@@ -30,7 +30,7 @@
     <link rel="apple-touch-icon" sizes="192x192" href="../assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../assets/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../assets/android-chrome-512x512.png">
-    
+
     <!-- Core Stylesheets -->
     <link rel="stylesheet" href=../assets/colours.css>
     <link rel="stylesheet" href="../assets/shared-styles.css">
@@ -40,15 +40,12 @@
     <link rel="stylesheet" href="../assets/learning_lists.css">
     <link rel="stylesheet" href="../assets/box_styles.css">
     <link rel="stylesheet" href="../assets/code_styles.css">
-
+    
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L2D - HB - Assignment submission</title>
-    
-    <!-- File URLs for this lesson -->
+    <title>scryptIQ - HB - Assignment submission</title>
     <script>window.LESSON_FILES = []; window.LESSON_PACKAGES = [];</script>
-        
 </head>
 <body>
     
@@ -68,7 +65,7 @@
                     Assignment submission
                     <span class="toggle-icon">▼</span>
                 </div>
-                <ul class="nested-nav expanded" id="expandable-section-7"><li><a href="#introduction">Introduction</a></li><li><a href="#workflow">Workflow</a></li><li><a href="#assignment-workflow">Assignment Workflow</a></li><li><a href="#submission-workflow">Submission Workflow</a></li><li><a href="#troubleshooting-codespace-based-submissions">Troubleshooting Codespace-based submissions</a></li><li><a href="#deleting-unused-codespaces">Deleting unused Codespaces</a></li><li><a href="#local-assignment-submission">Local assignment submission</a></li>
+                <ul class="nested-nav expanded" id="expandable-section-7"><li><a href="#introduction">Introduction</a></li><li><a href="#workflow">Workflow</a></li><li><a href="#assignment-workflow">Assignment Workflow</a></li><li><a href="#submission-workflow">Submission Workflow</a></li><li><a href="#troubleshooting-codespace-based-submissions">Troubleshooting Codespace-based submissions</a></li><li><a href="#local-assignment-submission">Local assignment submission</a></li>
                 </ul>
             </li><li><a href="./assignment-feedback.html">Assignment Feedback</a></li><li><a href="./ai-as-a-tool.html">AI as a Tool</a></li><li><a href="./final-project.html">Final Project</a></li><li><a href="./tutor-support.html">Tutor Support Sessions</a></li><li><a href="./contact-us.html">Contact us</a></li>
         </ul>
@@ -87,10 +84,10 @@
             <li><a href="./report-issue.html">Report an Issue</a></li>
         </h3>
     </div>
-    
+
     <!-- Sidebar Toggle Button -->
     <button id="sidebar-toggle" class="sidebar-toggle">❮</button>
-    
+
     <!-- Main Content Area -->
     <div id="main-content" class="main-content">
         <!-- Top Navigation Bar -->
@@ -199,7 +196,7 @@
                 <p>This is the typical workflow of git: Save changes → Stage changes → Commit (with message) → Sync (push) to the main repo (typically in the cloud).</p>
             </div>
         </div>
-        <h4>2. Delete your Codespace after use (mandatory):</h4><p>After submitting your assignment, you <strong>must delete your codespace</strong>. This step is essential, as active codespaces consume computational resources on GitHub&#x27;s servers. Leaving too many codespaces running may result in GitHub restricting your access to this feature. Each codespace operates as a dedicated virtual computer instance that requires resources to maintain.</p><p><ol class="nested-list"><li>Return to your repository, click <strong>Code → Codespaces</strong> tab</li><br><li>Find your Codespace</li><br><li>Click the three dots (...) beside it</li><br><li>Select Delete from the dropdown menu</li></ol></p><p>While this workflow might initially seem complex, it familiarises you with GitHub&#x27;s infrastructure, and enables you to easily share and collaborate on code, should you continue coding in the future.</p>
+        <h4>2. Delete your Codespace after use (mandatory):</h4><p>After submitting your assignment, you <strong>must delete your codespace</strong>. This step is essential, as active codespaces consume computational resources on GitHub&#x27;s servers. Leaving too many codespaces running may result in GitHub restricting your access to this feature. Each codespace operates as a dedicated virtual computer instance that requires resources to maintain.<br><br>Head to the <a href="./codespaces.html#deleting-unused-codespaces">Codespaces section</a> to see the steps.</p>
                     </div>
                 </div>
             </div>
@@ -213,15 +210,6 @@
                 </div>
             </div>
             
-            <div class="module-card" id="deleting-unused-codespaces">
-                <div class="module-body">
-                    <div class="module-section">
-                        <h3>Deleting unused Codespaces</h3>
-                        <p>Once you have successfully submitted your assignment, and have either pushed changes from your Codespace back to your GitHub repository, or locally downloaded any unsaved changes made in your Codespace, you <strong>must delete your Codespace</strong>. We cannot stress the importance of this, enough.</p><p><img src="./images/delete-codespace.png" alt="delete codespace" class="notebook-image"></p><p>GitHub offers limited resources for Codespaces, and if you exceed your quota, it will not reset again until all unused Codespaces have been decommissioned, with this resource disabled until GitHub resets it (which can vary from days to weeks).<br><br>To see all your active Codespaces at a glance, you can visit <a href="https://www.github.com/codespaces">www.github.com/codespaces</a>.</p>
-                    </div>
-                </div>
-            </div>
-            
             <div class="module-card" id="local-assignment-submission">
                 <div class="module-body">
                     <div class="module-section">
@@ -231,7 +219,7 @@
                 </div>
             </div>
             
-        
+
         <div class="page-navigation">
             <a href="./live-lectures.html" class="nav-button prev">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -245,7 +233,7 @@
                     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
                 </svg>
             </a></div>
-        
+
         <!-- Footer -->
         <div class="footer">
             <div>© All materials are copyright scryptIQ 2025</div>
@@ -708,6 +696,6 @@ if (document.readyState === 'loading') {
     main();
 }
     </script>
+    
 </body>
 </html>
-    

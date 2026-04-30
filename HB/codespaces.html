@@ -17,12 +17,12 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     
     <!-- Pyodide and CodeMirror -->
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/pastel-on-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/theme/pastel-on-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.20/mode/python/python.min.js"></script>
+
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
@@ -30,7 +30,7 @@
     <link rel="apple-touch-icon" sizes="192x192" href="../assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../assets/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../assets/android-chrome-512x512.png">
-    
+
     <!-- Core Stylesheets -->
     <link rel="stylesheet" href=../assets/colours.css>
     <link rel="stylesheet" href="../assets/shared-styles.css">
@@ -40,15 +40,12 @@
     <link rel="stylesheet" href="../assets/learning_lists.css">
     <link rel="stylesheet" href="../assets/box_styles.css">
     <link rel="stylesheet" href="../assets/code_styles.css">
-
+    
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L2D - HB - Codespaces</title>
-    
-    <!-- File URLs for this lesson -->
+    <title>scryptIQ - HB - Codespaces</title>
     <script>window.LESSON_FILES = []; window.LESSON_PACKAGES = [];</script>
-        
 </head>
 <body>
     
@@ -68,7 +65,7 @@
                     Codespaces
                     <span class="toggle-icon">▼</span>
                 </div>
-                <ul class="nested-nav expanded" id="expandable-section-4"><li><a href="#introduction">Introduction</a></li><li><a href="#codespace-limit">Codespace limit</a></li>
+                <ul class="nested-nav expanded" id="expandable-section-4"><li><a href="#introduction">Introduction</a></li><li><a href="#codespace-limit">Codespace limit</a></li><li><a href="#deleting-unused-codespaces">Deleting unused Codespaces</a></li>
                 </ul>
             </li><li><a href="./course-feedback.html">Submitting course feedback</a></li><li><a href="./live-lectures.html">Live Lectures & Drop-in Sessions</a></li><li><a href="./assignment-submission.html">Assignment submission</a></li><li><a href="./assignment-feedback.html">Assignment Feedback</a></li><li><a href="./ai-as-a-tool.html">AI as a Tool</a></li><li><a href="./final-project.html">Final Project</a></li><li><a href="./tutor-support.html">Tutor Support Sessions</a></li><li><a href="./contact-us.html">Contact us</a></li>
         </ul>
@@ -87,10 +84,10 @@
             <li><a href="./report-issue.html">Report an Issue</a></li>
         </h3>
     </div>
-    
+
     <!-- Sidebar Toggle Button -->
     <button id="sidebar-toggle" class="sidebar-toggle">❮</button>
-    
+
     <!-- Main Content Area -->
     <div id="main-content" class="main-content">
         <!-- Top Navigation Bar -->
@@ -146,7 +143,16 @@
                 </div>
             </div>
             
-        
+            <div class="module-card" id="deleting-unused-codespaces">
+                <div class="module-body">
+                    <div class="module-section">
+                        <h3>Deleting unused Codespaces</h3>
+                        <p>To delete the Codespace - after an assignment submission or a long break - you should first check the following:<ol class="nested-list"><li>That you have pushed changes from your Codespace back to your GitHub repository</li><br><li>If you can not, you should locally downloaded any unsaved changes made in your Codespace</li></ol></p><p>Next go the repository where you created the Codespace and click the <strong>green</strong> Code button and select the Codespaces tab. From here you should see the Codespace auto-generated name plus <code>...</code>, click this for the drop-down menu where the delete button is found.</p><p><img src="./images/delete-codespace.png" alt="delete codespace" class="notebook-image"></p>
+                    </div>
+                </div>
+            </div>
+            
+
         <div class="page-navigation">
             <a href="./online-materials.html" class="nav-button prev">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -160,7 +166,7 @@
                     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
                 </svg>
             </a></div>
-        
+
         <!-- Footer -->
         <div class="footer">
             <div>© All materials are copyright scryptIQ 2025</div>
@@ -623,6 +629,6 @@ if (document.readyState === 'loading') {
     main();
 }
     </script>
+    
 </body>
 </html>
-    
